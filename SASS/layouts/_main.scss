@@ -1,4 +1,34 @@
 main {
     display: flex; 
     flex-direction: column; 
+
+    &:not(.restau) section {
+        visibility: hidden;
+        /* Délai d'exécution : 0.5s + 0.5s + 3s + 1s = 5s ==> On a ainsi l'assurance que cette animation-là, s'exécutera après toutes les autres (système D peut-être ?) */
+        animation: showsections 1s linear 5s;  
+        animation-fill-mode: forwards;       
+    }
+
+    &>i {
+        position: absolute;
+        display: flex !important;   /* Contre-carrer la définition initiale de fontawesome */
+        align-items: center;        /* Centrage vertical */
+        justify-content: center;    /* Centrage horizontal */
+        width: 120px;               /* Avoir une largeur précise et suffisante, facilite la définition de l'attribut left */
+        height: 120px;
+        font-size: 15vw;   
+        left: calc(50% - 60px);     /* Si on utilise le transform: translate, l'animation est décalée en X. */
+        top: 50%;
+        opacity: 0;
+        
+        /* Pour le test de positionnement (uniquement)
+        /* On se rend compte ici qu'en utilisant transform: translateX(-50%), l'animation est décalée vers la droite.. */ 
+        /* animation: turn-in 3s infinite linear 1s; */        
+
+        /* Succession de fonctions d'animation, les unes après les autres */  
+        animation: opacity .5s linear .5s, turn-in 3s infinite linear 1s, majax 1s linear 4s;  
+
+        /* Conserver le dernier état sur la timeline de l'animation, sinon on revient à l'affichage de départ (=> backwards) */
+        animation-fill-mode: forwards;
+    } 
 }

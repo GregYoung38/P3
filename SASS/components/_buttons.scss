@@ -5,7 +5,7 @@ button.btn-pink:after {
 	left: -2px;
 	top: -2px;
     // background: linear-gradient(45deg, #fb0094, #5e5ecf, #00ff00,#b9b932, #ff0000, #fb0094, #5e5ecf, #00ff00,#b9b932, #ff0000);
-    @include gradient_violet;
+    @include gradient_multicolor;
 	background-size: 400%;
 	width: calc(100% + 4px);
 	height: calc(100% + 4px);

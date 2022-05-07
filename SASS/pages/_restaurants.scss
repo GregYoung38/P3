@@ -84,7 +84,8 @@ main.restau {
         gap: 15px;
         padding: $r_paddingLR;
         padding-top: 0;
-        flex: auto;
+        flex: auto;     
+        visibility: visible;
 
         &>h2 {
             font-size: 1em;
@@ -92,10 +93,7 @@ main.restau {
             text-shadow: none;
             letter-spacing: normal;
             margin-block-end: 0;
-
-            &:first-letter {
-                text-transform: uppercase;
-            }
+            text-transform: uppercase;
         }
         & span {
             width: 25px;
@@ -131,9 +129,7 @@ main.restau {
                     margin-block-start: 5px;
                     margin-block-end: 0;
                     @include text_overload;
-                }
-
-                
+                }                
             }
     
             &>.price {
@@ -178,7 +174,7 @@ main.restau {
         
         /* Affichage progressif des "cadres" en jouant sur l'opacité */
         $t: 0;
-        $delai: .05;
+        $delai: .2;
         @for $n from 1 through 4 {                           /* Pour chaque <section> */
             &:nth-child(#{$n}) {                
                 @for $i from 1 through 5 {                      /* Pour chaque <article> */

@@ -2,18 +2,8 @@
 header {
     display: flex; 
     flex-direction: column;
-    align-items: center;
+    align-items: center;    
 
-    // & div:first-child {
-    //     width: 100%;
-    //     box-shadow: 0 0 5px rgb(140, 140, 140);        
-
-    //     & h1 {
-    //         font-family: 'Shrikhand';
-    //         font-size: 2em;
-    //         width: auto;
-    //     }
-    // }
     &>h1 {
         position: relative;
         width: 100%;

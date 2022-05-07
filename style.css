@@ -1,4 +1,10 @@
 @charset "UTF-8";
+/* -----------------------------------------------------------------------------------------
+                                         Notes de projet
+
+   Auteur      : Grégory CALOIN
+   Réalisation : 10 au 25 Avril 2022
+   ----------------------------------------------------------------------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
@@ -93,10 +99,28 @@ a {
 }
 @keyframes turn-in {
   from {
-    transform: rotateZ(0deg);
+    transform-origin: center;
+    transform: rotate(0deg);
   }
   to {
-    transform: rotateZ(360deg);
+    transform-origin: center;
+    transform: rotate(780deg);
+  }
+}
+@keyframes majax {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes showsections {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
   }
 }
 @keyframes opacity {
@@ -200,6 +224,36 @@ main {
   display: flex;
   flex-direction: column;
 }
+main:not(.restau) section {
+  visibility: hidden;
+  /* Délai d'exécution : 0.5s + 0.5s + 3s + 1s = 5s ==> On a ainsi l'assurance que cette animation-là, s'exécutera après toutes les autres (système D peut-être ?) */
+  animation: showsections 1s linear 5s;
+  animation-fill-mode: forwards;
+}
+main > i {
+  position: absolute;
+  display: flex !important;
+  /* Contre-carrer la définition initiale de fontawesome */
+  align-items: center;
+  /* Centrage vertical */
+  justify-content: center;
+  /* Centrage horizontal */
+  width: 120px;
+  /* Avoir une largeur précise et suffisante, facilite la définition de l'attribut left */
+  height: 120px;
+  font-size: 15vw;
+  left: calc(50% - 60px);
+  /* Si on utilise le transform: translate, l'animation est décalée en X. */
+  top: 50%;
+  opacity: 0;
+  /* Pour le test de positionnement (uniquement)
+  /* On se rend compte ici qu'en utilisant transform: translateX(-50%), l'animation est décalée vers la droite.. */
+  /* animation: turn-in 3s infinite linear 1s; */
+  /* Succession de fonctions d'animation, les unes après les autres */
+  animation: opacity 0.5s linear 0.5s, turn-in 3s infinite linear 1s, majax 1s linear 4s;
+  /* Conserver le dernier état sur la timeline de l'animation, sinon on revient à l'affichage de départ (=> backwards) */
+  animation-fill-mode: forwards;
+}
 
 /* Section : Réservation */
 section.reservation {
@@ -223,7 +277,7 @@ section.restaurants > h2 {
   padding: 4px 0;
 }
 
-button.btn-pink {
+button {
   position: relative;
   padding: 20px 30px;
   border-radius: 30px;
@@ -235,7 +289,7 @@ button.btn-pink {
   overflow: hidden;
   cursor: pointer;
 }
-button.btn-pink > a {
+button > a {
   position: relative;
   /* Permet de conserver le texte du bouton au premier plan */
   margin: 0;
@@ -245,7 +299,7 @@ button.btn-pink > a {
   color: #ffffff;
   text-shadow: 0 0 1px #ffffff;
 }
-button.btn-pink span {
+button span {
   position: absolute;
 }
 button.btn-pink:hover {
@@ -254,6 +308,9 @@ button.btn-pink:hover {
 }
 
 /* Sections {communs} */
+section {
+  visibility: hidden;
+}
 section > h2 {
   margin-bottom: 25px;
   font-size: 1.2em;
@@ -314,8 +371,8 @@ section > h3 {
   font-weight: 100;
 }
 .fBlock > h3:hover {
-  border: 1px solid #ccc;
-  background: #E6E6FA;
+  filter: brightness(1.05);
+  box-shadow: 1px 1px 10px rgb(160, 160, 160);
   color: #9356DC;
 }
 .fBlock > h3:hover > i {
@@ -334,11 +391,11 @@ section > h3 {
   flex-wrap: wrap;
   gap: 20px;
 }
-.cards div.card {
+.cards a.card {
   position: relative;
   width: 100%;
 }
-.cards div.card > .wrapper {
+.cards a.card > .wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -347,15 +404,15 @@ section > h3 {
   box-shadow: 0px 0px 8px #999;
   overflow: hidden;
 }
-.cards div.card > .wrapper img {
+.cards a.card > .wrapper img {
   object-fit: cover;
   height: 100%;
   cursor: pointer;
 }
-.cards div.card > .wrapper img.pulse:hover {
+.cards a.card > .wrapper img.pulse:hover {
   animation: pulse 1s linear;
 }
-.cards div.card > .wrapper > h3 {
+.cards a.card > .wrapper > h3 {
   position: absolute;
   padding: 8px 12px;
   border-radius: 3px;
@@ -419,10 +476,11 @@ section > h3 {
   position: absolute;
   right: -15px;
   top: 30px;
+  border: none;
 }
 .heart:hover img {
-  transition-delay: 0.8s;
   filter: none;
+  transition-delay: 0.5s;
 }
 .heart:hover .fill {
   animation-name: fillAction;
@@ -431,6 +489,7 @@ section > h3 {
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
   mix-blend-mode: normal;
+  outline: 0;
 }
 
 .waveShape {
@@ -450,27 +509,27 @@ section > h3 {
     padding: 20px;
   }
 
-  .cards div.card > .wrapper {
+  .cards a.card > .wrapper {
     height: 20vh;
   }
 
-  button.btn-pink > a {
+  button > a {
     font-size: 1.1em;
   }
 }
 @media screen and (min-width: 768px) {
   .container {
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    align-content: center;
   }
   .container .fBlock {
-    width: calc((100% - 10px) / 2);
+    width: 300px;
   }
 
   .cards {
     flex-direction: row;
   }
-  .cards div.card {
+  .cards a.card {
     width: calc((100% - 20px) / 2);
   }
 
@@ -485,13 +544,16 @@ section > h3 {
     font-size: 3em;
   }
 
+  main h2 {
+    text-align: center;
+  }
   main.restau > .container {
     justify-content: space-between;
   }
   main.restau > .container section {
     width: calc((100% - 30px) / 2);
   }
-  main.restau > button.btn-pink > a {
+  main.restau > button > a {
     font-size: 1.3em;
   }
 
@@ -525,11 +587,12 @@ section > h3 {
     font-size: 5em;
   }
 
-  .container .fBlock {
-    width: calc((100% - 20px) / 3);
+  .container {
+    flex-direction: row;
+    align-content: flex-start;
   }
 
-  main > button.btn-pink > a, main.restau > button.btn-pink > a {
+  main > button > a {
     font-size: 1.3em;
   }
 
@@ -538,7 +601,7 @@ section > h3 {
   }
 }
 @media screen and (min-width: 1200px) {
-  .cards > div.card {
+  .cards a.card {
     width: calc((100% - 60px) / 4);
   }
 }
@@ -617,6 +680,7 @@ main.restau section {
   padding: 15px;
   padding-top: 0;
   flex: auto;
+  visibility: visible;
   /* Affichage progressif des "cadres" en jouant sur l'opacité */
   /* Pour chaque <section> */
   /* Pour chaque <section> */
@@ -629,8 +693,6 @@ main.restau section > h2 {
   text-shadow: none;
   letter-spacing: normal;
   margin-block-end: 0;
-}
-main.restau section > h2:first-letter {
   text-transform: uppercase;
 }
 main.restau section span {
@@ -710,31 +772,31 @@ main.restau section:nth-child(1) {
 }
 main.restau section:nth-child(1) article.meals:nth-child(1) {
   /* Réglage du moment d'exécution */
-  animation: opacity 0.3s linear 0.05s;
+  animation: opacity 0.3s linear 0.2s;
   animation-fill-mode: forwards;
   /* Contrôle dans le terminal */
 }
 main.restau section:nth-child(1) article.meals:nth-child(2) {
   /* Réglage du moment d'exécution */
-  animation: opacity 0.3s linear 0.1s;
+  animation: opacity 0.3s linear 0.4s;
   animation-fill-mode: forwards;
   /* Contrôle dans le terminal */
 }
 main.restau section:nth-child(1) article.meals:nth-child(3) {
   /* Réglage du moment d'exécution */
-  animation: opacity 0.3s linear 0.15s;
+  animation: opacity 0.3s linear 0.6s;
   animation-fill-mode: forwards;
   /* Contrôle dans le terminal */
 }
 main.restau section:nth-child(1) article.meals:nth-child(4) {
   /* Réglage du moment d'exécution */
-  animation: opacity 0.3s linear 0.2s;
+  animation: opacity 0.3s linear 0.8s;
   animation-fill-mode: forwards;
   /* Contrôle dans le terminal */
 }
 main.restau section:nth-child(1) article.meals:nth-child(5) {
   /* Réglage du moment d'exécution */
-  animation: opacity 0.3s linear 0.25s;
+  animation: opacity 0.3s linear 1s;
   animation-fill-mode: forwards;
   /* Contrôle dans le terminal */
 }
@@ -747,31 +809,31 @@ main.restau section:nth-child(2) {
 }
 main.restau section:nth-child(2) article.meals:nth-child(1) {
   /* Réglage du moment d'exécution */
-  animation: opacity 0.3s linear 0.3s;
+  animation: opacity 0.3s linear 1.2s;
   animation-fill-mode: forwards;
   /* Contrôle dans le terminal */
 }
 main.restau section:nth-child(2) article.meals:nth-child(2) {
   /* Réglage du moment d'exécution */
-  animation: opacity 0.3s linear 0.35s;
+  animation: opacity 0.3s linear 1.4s;
   animation-fill-mode: forwards;
   /* Contrôle dans le terminal */
 }
 main.restau section:nth-child(2) article.meals:nth-child(3) {
   /* Réglage du moment d'exécution */
-  animation: opacity 0.3s linear 0.4s;
+  animation: opacity 0.3s linear 1.6s;
   animation-fill-mode: forwards;
   /* Contrôle dans le terminal */
 }
 main.restau section:nth-child(2) article.meals:nth-child(4) {
   /* Réglage du moment d'exécution */
-  animation: opacity 0.3s linear 0.45s;
+  animation: opacity 0.3s linear 1.8s;
   animation-fill-mode: forwards;
   /* Contrôle dans le terminal */
 }
 main.restau section:nth-child(2) article.meals:nth-child(5) {
   /* Réglage du moment d'exécution */
-  animation: opacity 0.3s linear 0.5s;
+  animation: opacity 0.3s linear 2s;
   animation-fill-mode: forwards;
   /* Contrôle dans le terminal */
 }
@@ -784,31 +846,31 @@ main.restau section:nth-child(3) {
 }
 main.restau section:nth-child(3) article.meals:nth-child(1) {
   /* Réglage du moment d'exécution */
-  animation: opacity 0.3s linear 0.55s;
+  animation: opacity 0.3s linear 2.2s;
   animation-fill-mode: forwards;
   /* Contrôle dans le terminal */
 }
 main.restau section:nth-child(3) article.meals:nth-child(2) {
   /* Réglage du moment d'exécution */
-  animation: opacity 0.3s linear 0.6s;
+  animation: opacity 0.3s linear 2.4s;
   animation-fill-mode: forwards;
   /* Contrôle dans le terminal */
 }
 main.restau section:nth-child(3) article.meals:nth-child(3) {
   /* Réglage du moment d'exécution */
-  animation: opacity 0.3s linear 0.65s;
+  animation: opacity 0.3s linear 2.6s;
   animation-fill-mode: forwards;
   /* Contrôle dans le terminal */
 }
 main.restau section:nth-child(3) article.meals:nth-child(4) {
   /* Réglage du moment d'exécution */
-  animation: opacity 0.3s linear 0.7s;
+  animation: opacity 0.3s linear 2.8s;
   animation-fill-mode: forwards;
   /* Contrôle dans le terminal */
 }
 main.restau section:nth-child(3) article.meals:nth-child(5) {
   /* Réglage du moment d'exécution */
-  animation: opacity 0.3s linear 0.75s;
+  animation: opacity 0.3s linear 3s;
   animation-fill-mode: forwards;
   /* Contrôle dans le terminal */
 }
@@ -821,31 +883,31 @@ main.restau section:nth-child(4) {
 }
 main.restau section:nth-child(4) article.meals:nth-child(1) {
   /* Réglage du moment d'exécution */
-  animation: opacity 0.3s linear 0.8s;
+  animation: opacity 0.3s linear 3.2s;
   animation-fill-mode: forwards;
   /* Contrôle dans le terminal */
 }
 main.restau section:nth-child(4) article.meals:nth-child(2) {
   /* Réglage du moment d'exécution */
-  animation: opacity 0.3s linear 0.85s;
+  animation: opacity 0.3s linear 3.4s;
   animation-fill-mode: forwards;
   /* Contrôle dans le terminal */
 }
 main.restau section:nth-child(4) article.meals:nth-child(3) {
   /* Réglage du moment d'exécution */
-  animation: opacity 0.3s linear 0.9s;
+  animation: opacity 0.3s linear 3.6s;
   animation-fill-mode: forwards;
   /* Contrôle dans le terminal */
 }
 main.restau section:nth-child(4) article.meals:nth-child(4) {
   /* Réglage du moment d'exécution */
-  animation: opacity 0.3s linear 0.95s;
+  animation: opacity 0.3s linear 3.8s;
   animation-fill-mode: forwards;
   /* Contrôle dans le terminal */
 }
 main.restau section:nth-child(4) article.meals:nth-child(5) {
   /* Réglage du moment d'exécution */
-  animation: opacity 0.3s linear 1s;
+  animation: opacity 0.3s linear 4s;
   animation-fill-mode: forwards;
   /* Contrôle dans le terminal */
 }

@@ -14,32 +14,22 @@
 /* Animation au survol des Coeurs (Effet vague) */
 /* --> Remplissage du coeur */
 @keyframes fillAction {
-    0% {
-      transform: translate(0, 30px);
-    }
-    50%, 100% {
-      transform: translate(0, -40px);
-    }
+    0%        { transform: translate(0, 30px) }
+    50%, 100% { transform: translate(0, -40px) }
 }
 
 /* --> Effet vague */
 @keyframes waveAction {
-    0% {
-      transform: translate(-45px, 0);
-    }
-    100% {
-      transform: translate(0, 0);
-    }
+    0%   { transform: translate(-45px, 0) }
+    100% { transform: translate(0, 0) }
 }
 
 /* Animation au survol des Images (très léger zoom) */
 @keyframes pulse {
-    0% { transform:scale(1.0); }   
-    50% { transform:scale(1.15); }    
+    0%   { transform:scale(1.0); }   
+    50%  { transform:scale(1.15); }    
     100% { transform:scale(1.0); }   
 }
-
-
 
 @keyframes reveal-in {
   from { width: 0 }
@@ -56,13 +46,19 @@
 }
 
 @keyframes turn-in {
-  from { transform: rotateZ(0deg) }
-  to   { transform: rotateZ(360deg) }
+  from { transform-origin: center; transform: rotate(0deg) }
+  to   { transform-origin: center; transform: rotate(780deg) }
 }
-// @keyframes turn-out {
-//   from { transform: rotateZ(360deg) }
-//   to   { transform: rotateZ(0deg) }
-// }
+
+@keyframes majax {
+  from { opacity: 1 }
+  to   { opacity: 0 }
+}
+
+@keyframes showsections {
+  from { visibility: hidden }
+  to   { visibility: visible }
+}
 
 @keyframes opacity {
   from { opacity: 0 }

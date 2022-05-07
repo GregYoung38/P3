@@ -4,10 +4,10 @@
             font-size: 1.1em;
             padding: 20px;
         }
-        .cards div.card > .wrapper {
+        .cards a.card > .wrapper {
             height: 20vh;
         }
-        button.btn-pink > a {
+        button > a {
             font-size: 1.1em;
         }
     }
@@ -16,18 +16,20 @@
 @mixin tablet-only {
     @media screen and (min-width: map-get($breakpoints, tablet)) {
         .container {
-            flex-direction: row;
-            justify-content: center;
+            flex-direction: column;
+            // justify-content: center;
+            align-content: center;
     
             & .fBlock {
-                width: calc((100% - 10px)/2);
+                // width: calc((100% - 10px)/2);
+                width: 300px;
             }
         }
         
         .cards {
             flex-direction: row;
     
-            & div.card {
+            & a.card {
                 width: calc((100% - 20px)/2);
             }
         }
@@ -48,16 +50,22 @@
             }
         }
 
-        main.restau {
-            &>.container {
-                justify-content: space-between;
-    
-                & section {
-                    width: calc((100% - 30px)/2);
-                }
+        main {
+            & h2 {
+                text-align: center
             }
-            &>button.btn-pink > a {
-                font-size: 1.3em;
+
+            &.restau {
+                &>.container {
+                    justify-content: space-between;
+        
+                    & section {
+                        width: calc((100% - 30px)/2);
+                    }
+                }
+                &>button > a {
+                    font-size: 1.3em;
+                }
             }
         }
 
@@ -105,11 +113,12 @@
             }
         }
 
-        .container .fBlock {
-            width: calc((100% - 20px)/3);
+        .container {
+            flex-direction: row;
+            align-content: flex-start;
         }
 
-        main > button.btn-pink > a, main.restau > button.btn-pink > a {
+        main > button > a {
             font-size: 1.3em;
         }
 
@@ -122,7 +131,7 @@
 @mixin desktop-large-only {
     @media screen and (min-width: map-get($breakpoints, super-desktop)) {
         .cards {
-            &>div.card {
+            & a.card {
                 width: calc((100% - 60px)/4);
             }
         }
@@ -162,8 +171,12 @@
     }
 }
 
-@mixin gradient_violet {
+@mixin gradient_multicolor {
     background: linear-gradient(45deg, #fb0094, #5e5ecf, #00ff00,#b9b932, #ff0000, #fb0094, #5e5ecf, #00ff00,#b9b932, #ff0000);
+}
+
+@mixin gradient_violet {
+    background: linear-gradient(45deg, rgb(177, 71, 204),rgb(143, 223, 203), rgb(177, 71, 204));
 }
 
 @mixin gradient_vert {
