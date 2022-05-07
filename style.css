@@ -523,7 +523,7 @@ section > h3 {
     align-content: center;
   }
   .container .fBlock {
-    width: 300px;
+    width: 290px;
   }
 
   .cards {
@@ -544,8 +544,8 @@ section > h3 {
     font-size: 3em;
   }
 
-  main section > h2 {
-    align-self: center;
+  main:not(.restau) section > h2 {
+    text-align: center;
   }
   main.restau > .container {
     justify-content: space-between;

@@ -20,7 +20,7 @@
             align-content: center;
     
             & .fBlock {
-                width: 300px;
+                width: 290px;
             }
         }
         
@@ -49,8 +49,10 @@
         }
 
         main {
-            & section>h2 {
-                align-self: center;
+            &:not(.restau) section {
+                &>h2 {
+                    text-align: center;
+                }
             }
 
             &.restau {
