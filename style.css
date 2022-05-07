@@ -387,13 +387,12 @@ section > h3 {
 .cards a.card {
   position: relative;
   width: 100%;
-  max-height: 255px;
 }
 .cards a.card > .wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 30vh;
+  height: 250px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px lightgrey;
   overflow: hidden;
