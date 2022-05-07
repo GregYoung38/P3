@@ -1,0 +1,142 @@
+@mixin mobile-only {
+    @media screen and (min-width: map-get($breakpoints, mobile)) {
+        .container .fBlock h3 {
+            font-size: 1.1em;
+            padding: 20px;
+        }
+        .cards div.card > .wrapper {
+            height: 20vh;
+        }
+        button.btn-pink > a {
+            font-size: 1.1em;
+        }
+    }
+}
+
+@mixin tablet-only {
+    @media screen and (min-width: map-get($breakpoints, tablet)) {
+        .container {
+            flex-direction: row;
+            justify-content: center;
+    
+            & .fBlock {
+                width: calc((100% - 10px)/2);
+            }
+        }
+        
+        .cards {
+            flex-direction: row;
+    
+            & div.card {
+                width: calc((100% - 20px)/2);
+            }
+        }
+
+        header>h1 {
+            font-size: 3.5em;
+        }
+
+        main.restau >.container {
+            justify-content: space-between;
+
+            & section {
+                width: calc((100% - 30px)/2);
+            }
+        }
+
+
+        footer {
+            text-align: center;
+
+            & ul {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+
+                & span {
+                    display: none;
+                }
+            }
+
+            & .fa-solid {
+                font-size: 1.5em;
+            }
+        }
+    }
+}
+
+@mixin desktop-only {
+    @media screen and (min-width: map-get($breakpoints, desktop)) {
+        header {
+            &>h1 {
+                font-size: 5em;
+            }
+
+            & input {
+                width: 30%;
+            }
+        }
+        .container .fBlock {
+            width: calc((100% - 20px)/3);
+        }
+
+        main > button.btn-pink > a, main.restau > button.btn-pink > a {
+            font-size: 1.3em;
+        }
+
+        main.restau > .container section {
+            width: calc((100% - 40px)/3);
+        }
+    }
+}
+
+@mixin desktop-large-only {
+    @media screen and (min-width: map-get($breakpoints, super-desktop)) {
+        .cards {
+            &>div.card {
+                width: calc((100% - 60px)/4);
+            }
+        }
+    }
+}
+
+@mixin text_overload {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+// Shadows pour le bouton "index.html : Explorer nos restaurants"
+@mixin box_shadow ($level) {
+    @if ($level == 0) {
+        box-shadow: none
+    }        
+
+    @else if ($level == 1) {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
+    }
+
+    @else if ($level == 2) {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+    }
+
+    @else if ($level == 3) {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)
+    }
+
+    @else if ($level == 4) {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)
+    }
+
+    @else if ($level == 5) {
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22)
+    }
+}
+
+@mixin gradient_violet {
+    background: linear-gradient(45deg, #fb0094, #5e5ecf, #00ff00,#b9b932, #ff0000, #fb0094, #5e5ecf, #00ff00,#b9b932, #ff0000);
+}
+
+@mixin gradient_vert {
+    background: linear-gradient(45deg, #99E2D0,rgb(143, 223, 203), rgb(105, 223, 193));
+}

@@ -5,12 +5,12 @@ header {
     align-items: center;
 
     &>h1 {
+        position: relative;
         width: 100%;
         padding: 15px 0;
         font-family: 'Shrikhand';
         font-size: 2em;
-        box-shadow: 0 0 5px rgb(140, 140, 140);
-        position: relative;
+        box-shadow: 0 0 5px rgb(140, 140, 140);        
         text-align: center;
     }
 
@@ -18,17 +18,44 @@ header {
         display: flex;
         width: 100%;
         justify-content: center;
-        padding: 20px 0;
+        padding: 15px 0;
         background-color: #E8E8E8;
+
+        &>button {
+            display: none;
+            cursor: pointer;
+        }
 
         &>i {
             font-size: 1.2em;
+            align-self: center;
         }
-        &>h2 {
+        & input{
             align-self: center;
             font-weight: 700;
             font-size: 1em;
             margin-left: 10px;
+            outline: 0;
+            border: none;
+            background: transparent;
+            transition: .3s;
+            width: 110px;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:focus {
+                padding: 5px 8px;
+                background: #ffffff;
+                border:1px solid #ccc;
+                border-radius: 10px 0 0 10px;
+                width: 50%;     
+                
+                ~.search {      /* Permet de réaliser une action sur élément frère.. ici le bouton */
+                    display: block;
+                }
+            }            
         }
     }
 }

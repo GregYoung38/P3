@@ -1,0 +1,68 @@
+button.btn-pink:before, 
+button.btn-pink:after {
+	content: '';
+	position: absolute;
+	left: -2px;
+	top: -2px;
+    // background: linear-gradient(45deg, #fb0094, #5e5ecf, #00ff00,#b9b932, #ff0000, #fb0094, #5e5ecf, #00ff00,#b9b932, #ff0000);
+    @include gradient_violet;
+	background-size: 400%;
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	z-index: -1;
+    animation: colors-palette 30s linear infinite;    
+}
+button.btn-pink:after {
+	filter: blur(50px);
+}
+
+.search {
+    background: radial-gradient(ellipse at top, #fff, transparent), 
+                radial-gradient(ellipse at bottom, #4d9f0c, transparent);
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 0 10px 10px 0;
+    border-left: none;
+    padding: 0 15px;
+    color: green;
+    text-shadow: 0 0 1px green;
+    font-size: 0.9em;
+
+    &:hover {
+        background: radial-gradient(#e7e9ec, #d3a936);
+        color: #000;
+        text-shadow: 0 0 1px #000;
+    }
+}
+
+.effet-3d:hover {	
+    color: white;
+    text-shadow: 
+        0 1px 0 #ccc, 0 2px 0 #acacac, 0 3px 0 #a0a0a0, 0 4px 0 #9b9a9a, 0 5px 0 #888787,
+        0 6px 1px rgba(map-get($colors, noir),.1), 0 0 5px rgba(map-get($colors, noir),.1), 0 1px 3px rgba(map-get($colors, noir),.3),
+        0 3px 5px rgba(map-get($colors, noir),.3), 0 5px 10px rgba(map-get($colors, noir),.25), 0 10px 10px rgba(map-get($colors, noir),.2),
+        0 20px 20px rgba(map-get($colors, noir),.15);
+    cursor: pointer;
+}
+
+.effet-gold:hover {
+    position: relative;
+    background: linear-gradient(to bottom, #cfc09f 22%,#634f2c 24%, #cfc09f 26%, #cfc09f 27%,#ffecb3 40%,#3a2c0f 78%); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+    cursor: pointer;
+
+    &:after {
+        content: attr(data-heading);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        position: absolute;
+        text-shadow: -1px 0 1px #ccc, 
+                     0 0px 1px #ccc, 
+                     0px 6px 10px rgb(0 0 0 / 80%), 
+                     5px 5px 5px rgb(250 0 0 / 40%);        
+    }
+}

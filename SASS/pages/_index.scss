@@ -5,14 +5,13 @@ section.reservation {
     background: #F5F5F5;
 
     &>h2 {
-        padding: 0 60px; 
+        padding: 0 60px;         
     }
 }
 
 section.fonctionnement, section.restaurants {
     padding: 50px 20px;
 }
-
 
 /* Section : Restaurant */
 section.restaurants {
@@ -23,46 +22,35 @@ section.restaurants {
     }
 }
 
-button#explore_restaurants {
+button.btn-pink {
     position: relative;
     padding: 20px 30px;
     border-radius: 30px;
     border: none;
-    background-image: linear-gradient(180deg, var(--second) 0%, var(--primary) 100%);
+    background-image: linear-gradient(180deg, map-get($colors, second) 0%, map-get($colors, primary) 100%);
     box-shadow: 0px 0px 5px 1px rgb(0 0 0 / 20%);    
     margin: 15px 0;    
     transition: 0.5s;
     overflow: hidden;    
     cursor: pointer;
 
-    &>h3 {
+    &>a {
         position: relative;             /* Permet de conserver le texte du bouton au premier plan */
         margin: 0;
-        font-size: 1.2em;
+        font-size: 1em;
         letter-spacing: .06em;
         z-index: 100;
-        color: #fff;    
+        color: #ffffff; 
+        text-shadow: 0 0 1px #ffffff;
     }
 
     & span{
         position: absolute;
     }
 
-    &:hover span:nth-child(4) {
-        top: 100%;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(360deg, rgb(111, 11, 131), rgb(102, 102, 161));
-        animation: animate4 1s linear ;
-        animation-fill-mode: forwards;      /* En fin d'animation, reste sur le style défini à 100% (ne revient pas à 0%) */
-        
-        /* animation-delay: 0.75s; */
-    }
-    
-    @keyframes animate4{
-        0%        { top: 100%;  }
-        50%, 100% { top: 0%; }
+    &:hover {
+        @include box_shadow(3);
+        transform: scale(.95)
     }
 }
 
@@ -70,7 +58,7 @@ button#explore_restaurants {
 section {
     &>h2 {
         margin-bottom: 25px;
-        font-size: 1.6em;
+        font-size: 1.2em;
         font-weight: 900;
         text-shadow: 1px 0 0 black;
         letter-spacing: .05rem;
@@ -78,6 +66,7 @@ section {
 
     &>h3 {
         font-weight: normal;
+        font-size: 1.2em;
     }
 }
 
@@ -105,11 +94,12 @@ section {
         width: 100%;    
         height: 100%;
         margin: 0 10px;
-        padding: 20px;
+        padding: 15px;
         border-radius: 20px;
         background: #F8F8F8;
         box-shadow: 1px 1px 10px lightgrey;
-        font-size: 1.1em;
+        font-size: 0.9em;
+        cursor: pointer; 
 
         &>a {
             position: absolute;
@@ -120,18 +110,29 @@ section {
             transform: translate(-35px, -50%);   
             padding: 16px 14px 12px 14px;
             border-radius: 50%;
-            background: var(--primary);
+            background: map-get($colors, primary);
             color: #fff;
             width: 6px;
             height: 6px;     
             border: 1px solid;
             font-size: 0.8em;
-            font-weight: 100;    
+            font-weight: 100;   
+        }
+
+        &:hover {
+            border: 1px solid #ccc;
+            background: #E6E6FA;
+            color: map-get($colors, primary);
+
+            &>i {
+                color: map-get($colors, primary);
+            }
         }
     }
 
     & i {
-        padding: 0 20px; 
+        width: 40px;
+        text-align: center;
         font-size: 1.2em;
         color: dimgray;
     }
@@ -143,14 +144,15 @@ section {
     flex-wrap: wrap;
     gap: 20px;
 
-    & a.card {
+    & div.card {
         position: relative; 
+        width: 100%;
         
         &>.wrapper {      
             display: flex; 
             flex-direction: column; 
             width: 100%; 
-            height: 23vh; 
+            height: 14vh; 
             border-radius: 10px 10px 0 0;
             box-shadow: 0px 0px 8px #999;
             overflow: hidden;
@@ -159,13 +161,25 @@ section {
                 object-fit: cover;
                 height: 100%;
                 cursor: pointer;
+
+                /* Les classes {pic} devront être modifiées pour le responsive, pour obtenir un visuel axé sur la partie voulue de l'image */
+                &.position1 {
+                    object-position: 0 100%;
+                }
+                &.position2 {
+                    object-position: 0 62%;
+                }
+
+                &.pulse:hover { 
+                    animation: pulse 1s linear
+                }
             }    
             
             &>h3 { 
                 position: absolute;
                 padding: 8px 12px;
                 border-radius: 3px;
-                background: rgb(112, 214, 189);
+                background: map-get($colors, third);
                 color: rgb(56, 110, 56);
                 font-size: 0.9em;
                 right: 15px;
@@ -178,6 +192,7 @@ section {
 .informations { 
     position: relative; 
     display: flex;
+    justify-content: space-between;
     padding: 20px 10px;
     background: #fff;
     border-radius: 0 0 10px 10px;
@@ -185,8 +200,6 @@ section {
     overflow: hidden;
 
     &>.info {
-        width: 100%;
-
         &>h2 { 
             font-size: 1.2em; 
             color: #000; 
@@ -194,6 +207,7 @@ section {
             text-shadow: 0 0 0.5px dimgrey;
             text-overflow: ellipsis; 
             overflow-x: clip; 
+            cursor: pointer;
 
             &:hover { 
                 text-decoration: underline 
@@ -204,6 +218,7 @@ section {
             font-weight: 100;
             color: #000; 
             margin: 5px 0 0 0;
+            cursor: pointer;
 
             &:hover { 
                 text-decoration: underline 
@@ -212,55 +227,58 @@ section {
     }
 }
 
-.heart {
+.heart {    
+    position: relative;
     align-self: center;
-    padding: 0 15px;
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    overflow: hidden; 
+    cursor: pointer;
 
-    &>i {
-        font-size: 1.8em;
-        font-weight: 100;       /* N'affiche que la bordure du coeur */
-        cursor: pointer;
-    
-        &:hover {
-            font-weight: 600;       /* Permet le background-color complet du coeur */
-            color: var(--primary);    
+    &>img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index:100;
+        filter: drop-shadow(0 0 0 black) drop-shadow(0 0 0 black) drop-shadow(0 0 1px black);
+    }
+
+    &>.fill {
+        position: absolute;
+        right: -15px;
+        top: 30px;
+    }
+
+    &:hover {
+        img { 
+            transition-delay: .8s;
+            filter: none; 
+        }
+
+        .fill {            
+            animation-name: fillAction;
+            animation-iteration-count: 1;
+            animation-timing-function: cubic-bezier(.2, .6, .8, .4);
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
+            mix-blend-mode: normal;
         }
     }
 }
-
-
-
-/* Animation au survol des Images (très léger zoom) */
-.pulse:hover { animation: pulse 1s linear }
-@keyframes pulse {
-    0% { transform:scale(1.0); }   
-    50% { transform:scale(1.15); }    
-    100% { transform:scale(1.0); }   
-}
-
-/* Responsive module ---------------------------------------------------------------------------------- */
-@media screen and (min-width: 768px) {
-    .container {
-        flex-direction: row;
-        justify-content: center;
-
-        & .fBlock {
-            width: calc((100% - 10px)/2);
-        }
-    }
     
-    .cards {
-        flex-direction: row;
+.waveShape{
+    animation-name: waveAction;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    width: 50px;
+    height: 50px; 
+    transform: translate(-25px, -25px);
+    fill: url(#Gradient1);
+}
 
-        & a.card {
-            width: calc((100% - 20px)/2);
-        }
-    }
-    
-}
-@media screen and (min-width: 992px) {
-    .container .fBlock {
-        width: calc((100% - 20px)/3);
-    }
-}
-/* ---------------------------------------------------------------------------------------------------- */
+@include mobile-only;
+@include tablet-only;
+@include desktop-only;
+@include desktop-large-only;

@@ -1,0 +1,70 @@
+/* Animation au survol du bouton "Explorez nos restaurants" (Effet rideau inversé) */
+@keyframes colors-palette {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+/* Animation au survol des Coeurs (Effet vague) */
+/* --> Remplissage du coeur */
+@keyframes fillAction {
+    0% {
+      transform: translate(0, 30px);
+    }
+    50%, 100% {
+      transform: translate(0, -40px);
+    }
+}
+
+/* --> Effet vague */
+@keyframes waveAction {
+    0% {
+      transform: translate(-45px, 0);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+}
+
+/* Animation au survol des Images (très léger zoom) */
+@keyframes pulse {
+    0% { transform:scale(1.0); }   
+    50% { transform:scale(1.15); }    
+    100% { transform:scale(1.0); }   
+}
+
+
+
+@keyframes reveal-in {
+  from { width: 0 }
+  to   { width: 80px }
+}
+@keyframes reveal-out {
+  from {
+    justify-content: center; 
+    width: 80px
+  }
+  to {
+    width: 0;    
+  }
+}
+
+@keyframes turn-in {
+  from { transform: rotateZ(0deg) }
+  to   { transform: rotateZ(360deg) }
+}
+// @keyframes turn-out {
+//   from { transform: rotateZ(360deg) }
+//   to   { transform: rotateZ(0deg) }
+// }
+
+@keyframes opacity {
+  from { opacity: 0 }
+  to   { opacity: 1 }
+}
