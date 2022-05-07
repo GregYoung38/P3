@@ -2,12 +2,12 @@
 footer { 
     display: flex; 
     box-sizing: border-box; 
-    padding-top: 20px;
+    padding-top: 10px;
     background: #F8F8F8;
 
     & div { 
         width: 100%; 
-        padding: 25px; 
+        padding: 30px; 
         background: rgb(60,60,60);
 
         &>h2 { 

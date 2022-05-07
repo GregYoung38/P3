@@ -1,11 +1,48 @@
-/* -----------------------------------------------------------------------------------------
-                                         Notes de projet
-   
+/* ------------------------------------------------------------------------------------------------------------------ 
+                                                    NOTES DE PROJET   
    Auteur      : Grégory CALOIN
-   Réalisation : 10 au 25 Avril 2022
-   ----------------------------------------------------------------------------------------- */
+   Réalisation : 10 au 26 Avril 2022
+   ------------------------------------------------------------------------------------------------------------------ 
+
+    > AXES D'AMELIORATION
+        1) Images trop lourdes :
+        Les images proposées sont à taille unique. La méthode d'images adapatatives ne peut pas être mise en oeuvre
+        Ce qui impose un chargement d'images, tous supports d'écran confondus, au minimum 4 fois plus imposant que
+        nécessaire.
+        L'impact sur les performances du projet dans le navigateur est sans appel.
+        L'utilisation de Javascript pourrait permettre de redimensionner ces images à taille souhaitée avant de les
+        utiliser.
+
+        2) Phénomène de répétitions dans le HTML :
+        L'absence de PHP impose la ré-écriture systématique du header et du footer, pour les pages "restaurant"
+        Avec Javascript, la structure des CARD pourrait être plus dynamique tout en s'appuyant sur les tableaux JSON,
+        évitant du surcharger la structure HTML.
 
 
-
-
+    > EXPLICATION SUR LE SVG 
+        L'attribut FILL présent au niveau de la classe "waveShape" pointe vers #gradient1, lui-même déclaré dans
+        le HTML, sous la balise <defs> de la structure <svg>, permettant de la remplir d'un dégradé linéaire.
+        L'attribut "d" du <path> représente la forme de l'élément, et se compose de :
+        - Le mouvement du curseur (M)
+        - Le dessin de lignes horizontales (H), verticales (V)
+        - le dessin de courbes de béziers (c) dont la structure est {x-start y-start} {x y} {x-end y-end}
+          la valeur {x y} précise la puissance des coordonnées d'entrée et de sortie (notion vectorielle).
+        - la fermeture du <path> (z).
    
+
+    > ORAL : Expliquer les choix techniques
+    --> Notions élémentaires de SASS (installation, système 7-1, nesting, variables & maps, mixins, fonctions)
+    --> Eléments basés sur un {display: absolute} => numérotations, aperçus d'images
+    --> Intérêt du SVG
+    --> Animations :
+        # Choix des animations libres (cohérence par rapport à la charte graphique, liberté de conception..)
+          => Spinner
+          => Hover sur boutons
+          => Pulse sur les images d'aperçu des restaurants.
+        # Explications des animations imposées :
+          => apparition successive des éléments de menus, et des coches.
+          => Remplissage successif des coeurs.
+    --> Choix concernant la disposition des éléments sur tablette et desktop.     
+    --> Concepts généraux liés à GIT et GITHUB (initialisation, création de dépot, branches, push & pull)
+
+/* ------------------------------------------------------------------------------------------------------------------  */
