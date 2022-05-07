@@ -16,77 +16,44 @@
 
         <style>
             .container { 
-                height: 800px;
-                display: flex;
-                justify-content: center;
-                align-content: center;
+                height: 500px;
+                margin: 250px 0;
             }
 
-            .fill { position: relative; display: flex; /*background: orange*/ }
-
-            .first, .second { transform: scale(0.1); transform-origin: bottom; }
-            .first { 
-                position: relative; 
-                fill: transparent;                 
-                visibility: visible;
-            }
-            .second { 
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                height: 10%;
-                transition: height 1s ease-in-out ; 
-            }
-            .second:hover {
+            .fill-test { 
+                width: 100%;
                 height: 100%;
             }
-            .my-shape { 
-                fill-opacity: 1;
-                stroke-linejoin: round;
-                stroke:black;
+            
+            .heart svg:first-child > path {
                 stroke-width: 5;
-            }
-            .my-fill {                 
-                fill: url(#Gradient1); /* fill: url(.waveShape);  */                   
-            }            
+            }   
+            .heart svg:last-child  {
+                z-index: -100;
+            } 
         </style>
-
-
-
     </head>
 
     <body>
 
         <div class="container">
-            <div class="fill">   
-                <svg class="first" version="1.1" 
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 300 300">
-
-                   <path class="my-shape" d="M20,140 A40 45 0 0 1 150 50 A40 45 0 0 1 280 140 L150,295 z" />
+            <figure class="heart fill-test">   
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 300 300">
+                   <path d="M25,145 A40 45 -20 0 1 150 70 A40 45 20 0 1 275 145 L150,295 z" />
                 </svg>
 
-                <svg class="second" version="1.1" 
-                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="280" viewBox="0 0 300 300">
-
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 300 300">
                     <defs>
-                        <linearGradient id="Gradient1" x1="0" x2="0" y1="0" y2="1">
-                          <stop offset="0%" stop-color="#9356DC"/>                                              
-                          <stop offset="50%" stop-color="#FF79DA"/>
-                          <stop offset="100%" stop-color="gainsboro"/>
+                        <linearGradient id="Gradient1" x1="0" x2="100%" y1="0" y2="100%">
+                            <stop offset="0%" stop-color="#9356DC" />                 
+                            <stop offset="75%" stop-color="#FF79DA" />
+                            <stop offset="100%" stop-color="gainsboro" />
                         </linearGradient>    
-                        
-                        <path class="waveShape" d="M 400 400 V 2.5 c 0 0 0 -1.5 -1 1.5 c 0.1 2.6 
-                            -28 6 -80.5 -2.4 c -3.5 -1.6 -80.6 2.4 -80.6 2.4 c -12.3 1.1 -23.9 5 
-                            -51.9 6 c -2 -0.1 -27.1 2.4 -52 -1.9 c 0 0 -73.1 -7.7 -80.1 -5.7 c -18.1 
-                            10.4 -80.8 2.4 -80.8 2.4 c -7.3 -1 -19.1 -2.8 -52.1 5.2 c -7 4 -20 -1 
-                            -52.2 -1.9 c 0 0 -3.1 -0.3 -8.1 -0.7 V 300 H 300 z" 
-                            fill-rule="evenodd" d="M20,140 A40 45 0 0 1 150 50 A40 45 0 0 1 280 140 L150,300 z">
-                        </path>     
                     </defs>      
                     
-                    <path class="my-fill" d="M20,135 A40 45 0 0 1 150 50 A40 45 0 0 1 280 135 L150,300 z" />
+                    <path d="M25,145 A40 45 -20 0 1 150 70 A40 45 20 0 1 275 145 L150,295 z" />
                 </svg>                
-            </div>
+            </figure>
         </div>
 
     </body>        

@@ -40,18 +40,10 @@ button {
         }
     }
 
-    &.btn-pink {
-        &:hover {        
-            animation-name: shake-slow;
-            animation-duration: 4s;
-            animation-timing-function: ease-in-out;
-            animation-iteration-count: infinite
-        }
-    }
-
     &.btn-command {
-        margin: 0 auto;
+        align-self: center;
         width: 200px;
+        margin-top: 40px;
         padding: 20px 30px;
         font-size: 1em;
 
@@ -77,6 +69,28 @@ button {
         0 3px 5px rgba(map-get($colors, noir),.3), 0 5px 10px rgba(map-get($colors, noir),.25), 0 10px 10px rgba(map-get($colors, noir),.2),
         0 20px 20px rgba(map-get($colors, noir),.15);
     cursor: pointer;
+}
+
+a.btn-pink {
+    padding: 20px 30px;
+    border-radius: 30px;
+    background: linear-gradient(180deg, map-get($colors, second) 0%, map-get($colors, primary) 100%);
+    box-shadow: 0px 0px 5px 1px rgb(0 0 0 / 20%);
+    margin: 20px 0;
+    transition: 0.5s;
+    overflow: hidden;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 1em;
+    color: #fff;
+
+    &:hover {    
+        border-radius: 0;  
+        // animation-name: shake-slow;
+        // animation-duration: 4s;
+        // animation-timing-function: ease-in-out;
+        // animation-iteration-count: infinite
+    }
 }
 
 .effet-gold:hover {

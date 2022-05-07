@@ -651,9 +651,6 @@ section > h3 {
   main.restau > .container section > h2 {
     align-self: center;
   }
-  main.restau > button > a {
-    font-size: 1.3em;
-  }
 
   footer {
     text-align: center;
@@ -694,7 +691,7 @@ section > h3 {
   }
 
   main > button > a {
-    font-size: 1.3em;
+    font-size: 1.1em;
   }
 
   main.restau > .container section {
@@ -807,7 +804,7 @@ main.restau section span {
 main.restau section > article.meals {
   display: flex;
   justify-content: space-between;
-  border-radius: 10px;
+  border-radius: 15px;
   overflow: hidden;
   opacity: 0;
   background: #ffffff;
@@ -821,14 +818,14 @@ main.restau section > article.meals > .meal-info {
 }
 main.restau section > article.meals > .meal-info h2 {
   font-weight: bold;
-  font-size: 1em;
+  font-size: 1.1em;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 main.restau section > article.meals > .meal-info h3 {
   font-weight: 100;
-  font-size: 0.9em;
+  font-size: 1.05em;
   margin-block-start: 5px;
   margin-block-end: 0;
   white-space: nowrap;
@@ -854,6 +851,9 @@ main.restau section > article.meals > .buy {
   width: 0;
   animation: reveal-out 0.2s linear;
   animation-fill-mode: forwards;
+}
+main.restau section > article.meals:hover .meal-info, main.restau section > article.meals:hover .price {
+  background: rgba(80, 80, 80, 0.05);
 }
 main.restau section > article.meals:hover .buy {
   justify-content: center;
@@ -1054,15 +1054,10 @@ button.search:hover {
   color: #000;
   text-shadow: 0 0 1px #000;
 }
-button.btn-pink:hover {
-  animation-name: shake-slow;
-  animation-duration: 4s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-}
 button.btn-command {
-  margin: 0 auto;
+  align-self: center;
   width: 200px;
+  margin-top: 40px;
   padding: 20px 30px;
   font-size: 1em;
 }
@@ -1081,6 +1076,23 @@ button.btn-command:hover a {
   color: white;
   text-shadow: 0 1px 0 #ccc, 0 2px 0 #acacac, 0 3px 0 #a0a0a0, 0 4px 0 #9b9a9a, 0 5px 0 #888787, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.3), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+}
+
+a.btn-pink {
+  padding: 20px 30px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
+  transition: 0.5s;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 1em;
+  color: #fff;
+}
+a.btn-pink:hover {
+  border-radius: 0;
 }
 
 .effet-gold:hover {

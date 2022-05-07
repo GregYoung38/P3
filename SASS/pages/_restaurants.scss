@@ -107,7 +107,7 @@ main.restau {
         &>article.meals {
             display: flex;
             justify-content: space-between;
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
             opacity: 0;
             background: #ffffff;
@@ -121,13 +121,13 @@ main.restau {
 
                 & h2 {
                     font-weight: bold;
-                    font-size: 1em;
+                    font-size: 1.1em;
                     @include text_overload;
                 }
     
                 & h3 {
                     font-weight: 100;
-                    font-size: 0.9em;
+                    font-size: 1.05em;
                     margin-block-start: 5px;
                     margin-block-end: 0;
                     @include text_overload;
@@ -159,6 +159,9 @@ main.restau {
             }
 
             &:hover {
+                .meal-info, .price {
+                    background: rgba(80,80,80,.05);
+                }
                 .buy {
                     justify-content: center;
                     animation: reveal-in .2s linear;
@@ -175,10 +178,12 @@ main.restau {
         }   
         
         /* Affichage progressif des "cadres" en jouant sur l'opacité */
+        
         $t: 0;
         $delai: .2;
         @for $n from 1 through 4 {                           /* Pour chaque <section> */
             &:nth-child(#{$n}) {                
+
                 @for $i from 1 through 5 {                      /* Pour chaque <article> */
                     & article.meals:nth-child(#{$i}) {
                         $t : $t + $delai;                          /* Réglage du moment d'exécution */
@@ -189,6 +194,7 @@ main.restau {
                         @debug #{section} $n #{'/ élément n°'} $i #{'=> Exécution à'} $t #{'sec'};
                     }
                 }
+
             }
         }
     }      
