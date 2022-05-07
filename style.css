@@ -45,23 +45,15 @@ a {
 }
 /* Animation au survol des Coeurs (Effet vague) */
 /* --> Remplissage du coeur */
-@keyframes fillAction {
-  0% {
-    transform: translate(0, 30px);
+@keyframes fillHeart {
+  from {
+    height: 0%;
   }
-  50%, 100% {
-    transform: translate(0, -40px);
+  to {
+    height: 100%;
   }
 }
 /* --> Effet vague */
-@keyframes waveAction {
-  0% {
-    transform: translate(-45px, 0);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
 /* Animation au survol des Images (très léger zoom) */
 @keyframes pulse {
   0% {
@@ -462,41 +454,42 @@ section > h3 {
   overflow: hidden;
   cursor: pointer;
 }
-.heart > img {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-  filter: drop-shadow(0 0 0 black) drop-shadow(0 0 0 black) drop-shadow(0 0 1px black);
-}
-.heart > .fill {
+.heart svg {
   position: absolute;
-  right: -15px;
-  top: 30px;
-  border: none;
+  transform-origin: bottom;
+  width: 100%;
 }
-.heart:hover img {
-  filter: none;
-  transition-delay: 0.5s;
+.heart svg.first {
+  height: 100%;
+  fill: transparent;
+  z-index: 10;
 }
-.heart:hover .fill {
-  animation-name: fillAction;
-  animation-iteration-count: 1;
-  animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
-  animation-duration: 1.5s;
+.heart svg.first:hover ~ .second {
+  animation: fillHeart 0.5s linear;
   animation-fill-mode: forwards;
-  mix-blend-mode: normal;
-  outline: 0;
+}
+.heart svg.second {
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  transition: height 0.3s ease-in-out;
+  height: 0%;
+}
+.heart svg.second:hover {
+  animation: fillHeart 0.5s linear;
+  animation-fill-mode: forwards;
+}
+.my-shape {
+  stroke-width: 0;
+  stroke: white;
 }
 
-.waveShape {
-  animation-name: waveAction;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-duration: 1s;
-  width: 50px;
-  height: 50px;
-  transform: translate(-25px, -25px);
+.heart svg path.my-shape {
+  stroke-linejoin: round;
+  stroke: black;
+  stroke-width: 20;
+}
+.heart svg path.my-fill {
   fill: url(#Gradient1);
 }
 
@@ -592,7 +585,7 @@ section > h3 {
     font-size: 1.3em;
   }
 
-  main.restau section {
+  main.restau > .container section {
     width: calc((100% - 40px) / 3);
   }
 }

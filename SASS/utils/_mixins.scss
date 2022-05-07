@@ -126,7 +126,7 @@
             font-size: 1.3em;
         }
 
-        main.restau section {
+        main.restau >.container section {
             width: calc((100% - 40px)/3);
         }
     }

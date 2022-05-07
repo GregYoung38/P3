@@ -13,16 +13,20 @@
 
 /* Animation au survol des Coeurs (Effet vague) */
 /* --> Remplissage du coeur */
-@keyframes fillAction {
-    0%        { transform: translate(0, 30px) }
-    50%, 100% { transform: translate(0, -40px) }
+@keyframes fillHeart {
+  from { height: 0% }
+  to   { height: 100% }
 }
+// @keyframes fillAction {
+//     0%        { transform: translate(0, 30px) }
+//     50%, 100% { transform: translate(0, -40px) }
+// }
 
 /* --> Effet vague */
-@keyframes waveAction {
-    0%   { transform: translate(-45px, 0) }
-    100% { transform: translate(0, 0) }
-}
+// @keyframes waveAction {
+//     0%   { transform: translate(-45px, 0) }
+//     100% { transform: translate(0, 0) }
+// }
 
 /* Animation au survol des Images (très léger zoom) */
 @keyframes pulse {
@@ -64,3 +68,4 @@
   from { opacity: 0 }
   to   { opacity: 1 }
 }
+

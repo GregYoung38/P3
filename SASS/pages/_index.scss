@@ -236,48 +236,54 @@ section {
     overflow: hidden; 
     cursor: pointer;
 
-    &>img {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        z-index: 100;
-        filter: drop-shadow(0 0 0 black) drop-shadow(0 0 0 black) drop-shadow(0 0 1px black);
-    }
-
-    &>.fill {
+    & svg {
         position: absolute;
-        right: -15px;
-        top: 30px;
-        border: none;
-    }
+        transform-origin: bottom;
+        width: 100%;               
 
-    &:hover {
-        img {             
-            filter: none;
-            transition-delay: .5s;
+        &.first {
+            height: 100%;
+            fill: transparent;     
+            z-index: 10;
+
+            &:hover {    
+                & ~.second { 
+                    animation: fillHeart .5s linear;    
+                    animation-fill-mode: forwards;                     
+                }  
+            }
+        }
+        &.second {            
+            bottom: 0;
+            left: 0;
+            z-index: 5;
+            transition: height .3s ease-in-out ;       
+            height: 0%; 
+            
+            &:hover {                                
+                animation: fillHeart .5s linear;
+                animation-fill-mode: forwards;     
+
+                &::after {
+                    @at-root .my-shape {
+                        stroke-width: 0;
+                        stroke: white;
+                    }
+                }                
+            }
         }
 
-        .fill {            
-            animation-name: fillAction;
-            animation-iteration-count: 1;
-            animation-timing-function: cubic-bezier(.2, .6, .8, .4);
-            animation-duration: 1.5s;
-            animation-fill-mode: forwards;
-            mix-blend-mode: normal; 
-            outline: 0;           
+        & path {
+            &.my-shape { 
+                stroke-linejoin: round;
+                stroke:black;
+                stroke-width: 20;
+            }
+            &.my-fill {                 
+                fill: url(#Gradient1); // fill: url(.waveShape);                   
+            }            
         }
     }
-}
-    
-.waveShape {
-    animation-name: waveAction;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-duration: 1s;
-    width: 50px;
-    height: 50px; 
-    transform: translate(-25px, -25px);
-    fill: url(#Gradient1);
 }
 
 @include mobile-only;
