@@ -1,0 +1,354 @@
+/***********************************************************************************************************************
+**    Open Classrooms - Projet 3 : Dynamisez une page web avec des animations CSS                                     **
+**    Auteur : Grégory CALOIN                                                                                         **
+**    Période     : 17/04/2022 au ../04/2022                                                                          **
+**                                                                                                                    **
+************************************************************************************************************************/
+
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Complément d'initialisation CSS */
+* {
+    box-sizing: border-box; 
+    font-family: 'Roboto';
+}
+html { 
+    margin: 0 auto; 
+}
+h1, h2 { 
+    font-size: 12pt;
+    margin: 0;
+    font-weight: normal 
+}
+li { 
+    list-style-type: none; 
+    text-decoration: none; 
+    color: #000 
+}
+a { 
+    text-decoration: auto;
+    color: #000
+}
+.fa-regular, .far {
+     font-weight: 600 !important;
+}
+
+:root {
+    --primary: #9356DC;
+    --second : #FF79DA;
+    --third : #99E2D0;
+}
+
+
+/* Header */
+header {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+header>h1 {
+    width: 100%;
+    padding: 15px 0;
+    font-family: 'Shrikhand';
+    font-size: 2em;
+    box-shadow: 0 0 5px rgb(140, 140, 140);
+    position: relative;
+    text-align: center;
+}
+header>div.location {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 20px 0;
+    background-color: #E8E8E8;
+}
+header>div.location>i {
+    font-size: 1.2em;
+}
+header>div.location>h2 {
+    align-self: center;
+    font-weight: 700;
+    font-size: 1em;
+    margin-left: 10px;
+}
+
+
+main {
+    display: flex; 
+    flex-direction: column; 
+}
+
+/* Section : Réservation */
+section.reservation {
+    text-align: center;
+    padding: 40px 0;
+    background: #F5F5F5;
+}
+section.reservation>h2 {
+    padding: 0 60px; 
+}
+
+
+section.fonctionnement, section.restaurants {
+    padding: 50px 20px;
+}
+
+
+/* Section : Restaurant */
+section.restaurants {
+    background: #F8F8F8;
+}
+section.restaurants>h2 {
+    padding: 4px 0;
+}
+button#explore_restaurants {
+    position: relative;
+    padding: 20px 30px;
+    border-radius: 30px;
+    border: none;
+    background-image: linear-gradient(180deg, var(--second) 0%, var(--primary) 100%);
+    box-shadow: 0px 0px 5px 1px rgb(0 0 0 / 20%);    
+    margin: 15px 0;    
+    transition: 0.5s;
+    overflow: hidden;    
+    cursor: pointer;
+}
+button#explore_restaurants>h3 {
+    position: relative;             /* Permet de conserver le texte du bouton au premier plan */
+    margin: 0;
+    font-size: 1.2em;
+    letter-spacing: .06em;
+    z-index: 100;
+    color: #fff;    
+}
+button#explore_restaurants span{
+    position: absolute;
+}
+
+button#explore_restaurants:hover span:nth-child(4) {
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(360deg, rgb(111, 11, 131), rgb(102, 102, 161));
+    animation: animate4 1s linear ;
+    animation-fill-mode: forwards;      /* En fin d'animation, reste sur le style défini à 100% (ne revient pas à 0%) */
+    
+    /* animation-delay: 0.75s; */
+}
+
+@keyframes animate4{
+    0%        { top: 100%;  }
+    50%, 100% { top: 0%; }
+}
+
+
+
+/* Sections {communs} */
+section>h2 {
+    margin-bottom: 25px;
+    font-size: 1.6em;
+    font-weight: 900;
+    text-shadow: 1px 0 0 black;
+    letter-spacing: .05rem;
+}
+section>h3 {
+    font-weight: normal;
+}
+
+
+/* Miniatures d'images */
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.fBlock {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: 100%;
+}
+.fBlock:last-child {
+    margin-bottom: 20px;
+}
+.fBlock>h3 {
+    position: relative;
+    width: 100%;    
+    height: 100%;
+    margin: 0 10px;
+    padding: 20px;
+    border-radius: 20px;
+    background: #F8F8F8;
+    box-shadow: 1px 1px 10px lightgrey;
+    font-size: 1.1em;
+}
+.fBlock>h3>a {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    transform: translate(-35px, -50%);   
+    padding: 16px 14px 12px 14px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    width: 6px;
+    height: 6px;     
+    border: 1px solid;
+    font-size: 0.8em;
+    font-weight: 100;    
+}
+.fBlock i {
+    padding: 0 20px;
+    font-size: 1.2em;
+    color: dimgray;
+}
+
+
+
+.cards {    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+a.card {
+    position: relative;   
+}
+.card>.wrapper {      
+    display: flex; 
+    flex-direction: column; 
+    width: 100%; 
+    height: 23vh; 
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0px 0px 8px #999;
+    overflow: hidden;
+}
+.card>.wrapper img { 
+    object-fit: cover;
+    height: 100%;
+    cursor: pointer;
+} 
+.wrapper>h3 { 
+    position: absolute;
+    padding: 8px 12px;
+    border-radius: 3px;
+    background: rgb(112, 214, 189);
+    color: rgb(56, 110, 56);
+    font-size: 0.9em;
+    right: 15px;
+    cursor:none;
+}
+
+.informations { 
+    position: relative; 
+    display: flex;
+    padding: 20px 10px;
+    background: #fff;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0px 0px 8px #999;
+    overflow: hidden;
+}
+.informations>.info>h2 { 
+    font-size: 1.2em; 
+    color: #000; 
+    font-weight: 900;
+    text-shadow: 0 0 0.5px dimgrey;
+    text-overflow: ellipsis; 
+    overflow-x: clip; 
+}
+.informations>.info>h3 { 
+    font-size: 1.1em; 
+    font-weight: 100;
+    color: #000; 
+    margin: 5px 0 0 0 
+}
+.informations h2:hover, .informations h3:hover { 
+    text-decoration: underline 
+}
+.info {
+    width: 100%;
+}
+.heart {
+    align-self: center;
+    padding: 0 15px;
+}
+.heart>i {
+    font-size: 1.8em;
+    font-weight: 100;       /* N'affiche que la bordure du coeur */
+    cursor: pointer;
+}
+.heart>i:hover {
+    font-weight: 600;       /* Permet le background-color complet du coeur */
+    color: var(--primary);    
+}
+
+/* Footer */
+footer { 
+    display: flex; 
+    box-sizing: border-box; 
+    padding-top: 20px;
+    background: #F8F8F8;
+}
+footer div { 
+    width: 100%; 
+    padding: 20px; 
+    background: rgb(60,60,60);
+}
+footer div>h2 { 
+    font-family: 'Shrikhand';    
+    font-size: 1.2em; 
+    color: #fff;
+    margin: 15px 0; 
+}
+footer ul {
+    padding-inline-start: 0;
+    margin-block-end: 0;
+}
+footer ul li a { 
+    font-weight: normal; 
+    font-size: 1.1em; 
+    line-height: 1.6em; 
+    color: #f1f1f1;
+}
+footer ul li a i {
+    margin-right: 1em;
+    font-size: 0.8em;
+}
+
+
+/* Animation au survol des Images (très léger zoom) */
+.pulse:hover { animation: pulse 1s linear }
+@keyframes pulse {
+    0% { transform:scale(1.0); }   
+    50% { transform:scale(1.15); }    
+    100% { transform:scale(1.0); }   
+}
+
+/* Responsive module ---------------------------------------------------------------------------------- */
+@media screen and (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .fBlock {
+        width: calc((100% - 10px)/2);
+    }
+    .cards {
+        flex-direction: row;
+    }
+    a.card {
+        width: calc((100% - 20px)/2);
+    }
+}
+@media screen and (min-width: 992px) {
+    .fBlock {
+        width: calc((100% - 20px)/3); 
+    }
+}
+/* ---------------------------------------------------------------------------------------------------- */

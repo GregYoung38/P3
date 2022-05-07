@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>ohmyfood!</title>
+        <meta name="language" content="fr" />
+        <meta name="description" content="Restauration en commandes">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Grégory CALOIN">
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />        
+        
+        <link rel="stylesheet" type="text/css" href="./normalize.css" />
+        <link rel="stylesheet" type="text/css" href="./style.css" />
+        <script src="https://kit.fontawesome.com/59de80f43b.js"></script>
+    </head>
+
+    <body>                        
+        <header>   
+            <h1>ohmyfood</h1>
+
+            <div class="location">
+                <i class="fa-solid fa-location-dot"></i>                
+                <input type='text' value="Paris, Belleville" />
+                <button class="search">Chercher</button>
+            </div>
+        </header>
+
+        <main>   
+            <i class="fa-solid fa-spinner"></i> <!--  + fa-pulse ou fa-spin pour avoir une animation automatique (difficilement configurable) -->
+
+            <section class="reservation">
+                <h2>Réservez le menu qui vous convient</h2>
+                <h3>Découvrez des restaurants d'exception, sélectionnés par nos soins</h3>
+                <a class="btn-pink" href="#les_restos">Explorer nos restaurants</a>
+            </section>
+
+            <section class="fonctionnement">    
+                <h2>Fonctionnement</h2>   
+
+                <div class="container">
+                    <div class="fBlock">
+                        <h3>
+                            <a class="number">1</a>
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                            Choisissez un restaurant
+                        </h3>
+                    </div>  
+
+                    <div class="fBlock">                    
+                        <h3>
+                            <a class="number">2</a>
+                            <i class="fa-regular fa-list-ul"></i>
+                            Composez votre menu
+                        </h3>
+                    </div>  
+
+                    <div class="fBlock">
+                        <h3>
+                            <a class="number">3</a>
+                            <i class="fa-regular fa-store"></i>
+                            Dégustez au restaurant
+                        </h3>
+                    </div>  
+                </div>
+            </section>
+
+            <section class="restaurants" id="les_restos">      
+                <h2>Restaurants</h2>  
+                
+                <div class="cards">
+                    <a class="card" href="./restau4.html">
+                        <figure class='wrapper'>
+                            <img class="o-paysage pulse" src='images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg'                                 
+                                 alt='palette_du_gout'/>  
+                            <h3>Nouveau</h3>                          
+                        </figure>
+                        
+                        <div class="informations">
+                            <div class="info">
+                                <h2 title="La palette du goût">La palette du goût</h2>
+                                <h3>Ménilmontant</h3>
+                            </div>
+
+                            <figure class="heart">   
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                     width="300" height="300" viewBox="0 0 300 300">               
+
+                                   <path d="M25,145 A40 45 -20 0 1 150 70 A40 45 20 0 1 275 145 L150,295 z" />
+                               </svg>
+                               
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     width="300" height="280" viewBox="0 0 300 300">
+
+                                    <defs>
+                                        <linearGradient id="Gradient1" x1="0" y1="0" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#9356DC" />                 
+                                            <stop offset="75%" stop-color="#FF79DA" />
+                                            <stop offset="100%" stop-color="gainsboro" />
+                                        </linearGradient>
+                                    </defs> 
+                                     
+                                    <path d="M25,145 A40 45 -20 0 1 150 70 A40 45 20 0 1 275 145 L150,295 z" />
+                                </svg>
+                            </figure>
+
+                        </div> 
+                    </a>
+
+                    <a class="card" href="./restau2.html">
+                        <figure class='wrapper'>
+                            <img class="o-portrait pulse" src='images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg'
+                                 alt='note_enchantee'>
+                            <h3>Nouveau</h3>
+                        </figure>
+                        
+                        <div class="informations">
+                            <div class="info">
+                                <h2 title="La note enchantée">La note enchantée</h2>
+                                <h3>Charonne</h3>
+                            </div>
+
+                            <figure class="heart">    
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 300 300">               
+                                   <path d="M25,145 A40 45 -20 0 1 150 70 A40 45 20 0 1 275 145 L150,295 z" />
+                               </svg>
+                               
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="280" viewBox="0 0 300 300">                                     
+                                    <path d="M25,145 A40 45 -20 0 1 150 70 A40 45 20 0 1 275 145 L150,295 z" />
+                                </svg>
+                            </figure>                           
+                        </div> 
+                    </a>
+
+                    <a class="card" href="./restau1.html">
+                        <figure class='wrapper'>
+                            <img class="o-paysage pulse" src='images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg'                                 
+                                 alt='a_la_francaise'>
+                        </figure>
+                        
+                        <div class="informations">
+                            <div class="info">
+                                <h2 title="A la française">A la française</h2>
+                                <h3>Cité Rouge</h3>
+                            </div>
+
+                            <figure class="heart">   
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 300 300">               
+                                   <path d="M25,145 A40 45 -20 0 1 150 70 A40 45 20 0 1 275 145 L150,295 z" />
+                               </svg>
+
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="280" viewBox="0 0 300 300">                                     
+                                    <path d="M25,145 A40 45 -20 0 1 150 70 A40 45 20 0 1 275 145 L150,295 z" />
+                                </svg>                                
+                            </figure>
+                        </div> 
+                    </a>
+
+                    <a class="card" href="./restau3.html">
+                        <figure class='wrapper'>
+                            <img class="o-paysage pulse" src='images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg'                                 
+                                 alt='delice_des_sens'>
+                        </figure>
+                        
+                        <div class="informations">
+                            <div class="info">
+                                <h2 title="Le délice des sens">Le délice des sens</h2>
+                                <h3>Folie-Méricourt</h3>
+                            </div>
+
+                            <figure class="heart">    
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 300 300">               
+                                   <path d="M25,145 A40 45 -20 0 1 150 70 A40 45 20 0 1 275 145 L150,295 z" />
+                               </svg>
+                               
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="280" viewBox="0 0 300 300">                                     
+                                    <path d="M25,145 A40 45 -20 0 1 150 70 A40 45 20 0 1 275 145 L150,295 z" />
+                                </svg>
+                            </figure>
+                        </div> 
+                    </a>
+                </div>
+            </section>
+        </main>    
+
+        <footer>
+            <div>
+                <h2>ohmyfood</h2>
+                <ul> 
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-utensils"></i>
+                            <span>Proposer un restaurant</span>
+                        </a>
+                    </li>   
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-handshake-angle"></i>
+                            <span>Devenir partenaire</span>
+                        </a>
+                    </li>             
+                    <li>
+                        <a href="#">Mentions légales</a>
+                    </li> 
+                    <li>
+                        <a href="mailto:contact@ohmyfood.fr">Contact</a>
+                    </li> 
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>
