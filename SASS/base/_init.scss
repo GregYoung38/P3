@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box; 
+    font-family: 'Roboto';
+}
+
+html { 
+    margin: 0 auto; 
+}
+h1, h2 { 
+    font-size: 12pt;
+    margin: 0;
+    font-weight: normal 
+}
+li { 
+    list-style-type: none; 
+    text-decoration: none; 
+    color: #000 
+}
+a { 
+    text-decoration: auto;
+    color: #000
+}
+.fa-regular, .far {
+     font-weight: 600 !important;
+}
