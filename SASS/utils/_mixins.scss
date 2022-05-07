@@ -120,6 +120,10 @@
         .container {
             flex-direction: row;
             align-content: flex-start;
+
+            & .fBlock {
+                width: 290px;
+            }
         }
 
         main > button > a {

@@ -575,7 +575,7 @@ section > h3 {
 .heart svg:first-child > path {
   stroke-linejoin: round;
   /* Forme de la terminaison de la bordure */
-  stroke: black;
+  stroke: rgba(0, 0, 0, 0.65);
   /* Couleur de la bordure */
   stroke-width: 20;
   /* Epaisseur de la bordure */
@@ -688,6 +688,9 @@ section > h3 {
   .container {
     flex-direction: row;
     align-content: flex-start;
+  }
+  .container .fBlock {
+    width: 290px;
   }
 
   main > button > a {
