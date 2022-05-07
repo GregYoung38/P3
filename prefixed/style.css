@@ -1,0 +1,1101 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Roboto";
+}
+
+html {
+  margin: 0 auto;
+}
+
+h1, h2 {
+  font-size: 10pt;
+  margin: 0;
+  font-weight: normal;
+}
+
+li {
+  list-style-type: none;
+  text-decoration: none;
+  color: #000;
+}
+
+a {
+  -webkit-text-decoration: auto;
+          text-decoration: auto;
+  color: #000;
+}
+
+.fa-regular, .far {
+  font-weight: 600 !important;
+}
+
+figure {
+  margin: 0;
+}
+
+/* Animation au survol des Coeurs (Effet vague) */
+/* --> Remplissage du coeur */
+@-webkit-keyframes fillHeart {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+@keyframes fillHeart {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+/* Animation au survol des Images (très léger zoom) */
+@-webkit-keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes reveal-in {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+@keyframes reveal-in {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+@-webkit-keyframes reveal-out {
+  from {
+    justify-content: center;
+    width: 80px;
+  }
+  to {
+    width: 0;
+  }
+}
+@keyframes reveal-out {
+  from {
+    justify-content: center;
+    width: 80px;
+  }
+  to {
+    width: 0;
+  }
+}
+@-webkit-keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes majax {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes majax {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes turn-in {
+  from {
+    transform-origin: center;
+    transform: rotate(0deg);
+  }
+  to {
+    transform-origin: center;
+    transform: rotate(780deg);
+  }
+}
+@keyframes turn-in {
+  from {
+    transform-origin: center;
+    transform: rotate(0deg);
+  }
+  to {
+    transform-origin: center;
+    transform: rotate(780deg);
+  }
+}
+@-webkit-keyframes showsections {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+  }
+}
+@keyframes showsections {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+  }
+}
+/* Footer */
+footer {
+  display: flex;
+  box-sizing: border-box;
+  padding-top: 10px;
+  background: #F8F8F8;
+}
+footer div {
+  width: 100%;
+  padding: 30px;
+  background: rgb(60, 60, 60);
+}
+footer div > h2 {
+  font-family: "Shrikhand";
+  font-size: 1.2em;
+  color: #fff;
+  margin: 15px 0;
+  -webkit-margin-before: 5px;
+          margin-block-start: 5px;
+}
+footer ul {
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+}
+footer ul li a {
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1.6em;
+  color: #f1f1f1;
+}
+footer ul li a i {
+  margin-right: 1em;
+  font-size: 0.8em;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header > h1 {
+  position: relative;
+  width: 100%;
+  padding: 15px 0;
+  font-family: "Shrikhand";
+  font-size: 2em;
+  box-shadow: 0 0 5px rgb(140, 140, 140);
+  text-align: center;
+}
+header > div.location {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 15px 0;
+  background-color: #E8E8E8;
+}
+header > div.location > button {
+  display: none;
+  cursor: pointer;
+}
+header > div.location > i {
+  font-size: 1.2em;
+  align-self: center;
+}
+header > div.location input {
+  align-self: center;
+  font-weight: 700;
+  font-size: 1em;
+  margin-left: 10px;
+  outline: 0;
+  border: none;
+  background: transparent;
+  transition: 0.3s;
+  width: 120px;
+}
+header > div.location input:hover {
+  cursor: pointer;
+}
+header > div.location input:focus {
+  padding: 5px 8px;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 10px 0 0 10px;
+  width: 50%;
+}
+header > div.location input:focus ~ .search {
+  /* Permet de réaliser une action sur élément frère.. ici le bouton */
+  display: block;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  /* Ce qui suit concerne uniquement le spinner et son animation */
+}
+main:not(.restau) section {
+  visibility: hidden;
+  /* Délai d'exécution : 4s + 1s = 5s ==> On a ainsi l'assurance que cette animation-là, s'exécutera après toutes les autres */
+  -webkit-animation: showsections 2s linear 5s;
+          animation: showsections 2s linear 5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+main > i {
+  position: absolute;
+  display: flex !important;
+  /* Contre-carrer la définition initiale de fontawesome */
+  align-items: center;
+  /* Centrage vertical */
+  justify-content: center;
+  /* Centrage horizontal */
+  width: 120px;
+  /* Avoir une largeur précise et suffisante, facilite la définition de l'attribut left */
+  height: 120px;
+  font-size: 15vw;
+  left: calc(50% - 60px);
+  /* Si on utilise le transform: translate, l'animation est décalée en X. */
+  top: 50%;
+  opacity: 0;
+  /* Pour le test de positionnement (uniquement)
+  /* On se rend compte ici qu'en utilisant transform: translateX(-50%), l'animation est décalée vers la droite.. */
+  /* animation: turn-in 3s infinite linear 1s; */
+  /* Succession de fonctions d'animation, les unes après les autres */
+  -webkit-animation: opacity 0.3s linear, turn-in 3s infinite linear 0.5s, majax 1s linear 4s;
+          animation: opacity 0.3s linear, turn-in 3s infinite linear 0.5s, majax 1s linear 4s;
+  /* Conserver le dernier état sur la timeline de l'animation, sinon on revient à l'affichage de départ (=> backwards) */
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+section {
+  visibility: hidden;
+}
+section.reservation {
+  text-align: center;
+  padding: 40px 0;
+  background: #F5F5F5;
+}
+section.reservation > h2 {
+  padding: 0 60px;
+}
+section.fonctionnement, section.restaurants {
+  padding: 55px 20px;
+}
+section.fonctionnement > h2, section.restaurants > h2 {
+  margin-bottom: 25px;
+}
+section.restaurants {
+  background: #F8F8F8;
+}
+section > h2 {
+  font-size: 1.4em;
+  font-weight: 900;
+  text-shadow: 1px 0 0 black;
+  letter-spacing: 0.05rem;
+}
+section > h3 {
+  -webkit-margin-before: 11px;
+          margin-block-start: 11px;
+  -webkit-margin-after: 11px;
+          margin-block-end: 11px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+/* Miniatures d'images */
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.fBlock {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  height: 100%;
+}
+.fBlock:last-child {
+  margin-bottom: 20px;
+}
+.fBlock > h3 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 10px;
+  padding: 15px;
+  border-radius: 20px;
+  background: #F8F8F8;
+  box-shadow: 1px 1px 10px lightgrey;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+.fBlock > h3 > a {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  transform: translate(-35px, -50%);
+  padding: 16px 14px 12px 14px;
+  border-radius: 50%;
+  background: #9356DC;
+  color: #fff;
+  width: 6px;
+  height: 6px;
+  border: 1px solid;
+  font-size: 0.8em;
+  font-weight: 100;
+}
+.fBlock > h3:hover {
+  background: rgba(224, 176, 255, 0.25);
+  box-shadow: 1px 1px 10px rgb(160, 160, 160);
+}
+.fBlock > h3:hover > i {
+  color: #9356DC;
+}
+.fBlock i {
+  width: 40px;
+  text-align: center;
+  font-size: 1.2em;
+  color: dimgray;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.cards a.card {
+  position: relative;
+  width: 100%;
+}
+.cards a.card > .wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px lightgrey;
+  overflow: hidden;
+}
+.cards a.card > .wrapper img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  cursor: pointer;
+}
+.cards a.card > .wrapper img.o-paysage {
+  -o-object-position: 50% -60px;
+     object-position: 50% -60px;
+}
+.cards a.card > .wrapper img.o-portrait {
+  -o-object-position: 50% -155px;
+     object-position: 50% -155px;
+}
+.cards a.card > .wrapper img.pulse:hover {
+  -webkit-animation: pulse 1s linear;
+          animation: pulse 1s linear;
+}
+.cards a.card > .wrapper > h3 {
+  position: absolute;
+  padding: 8px 12px;
+  border-radius: 3px;
+  background: #99E2D0;
+  color: rgb(56, 110, 56);
+  font-size: 0.9em;
+  right: 15px;
+  cursor: none;
+}
+
+.informations {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 18px 10px;
+  background: #fff;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0px 0px 10px lightgrey;
+  overflow: hidden;
+}
+.informations > .info h2, .informations > .info h3 {
+  font-size: 1.1em;
+  color: #000;
+  cursor: pointer;
+}
+.informations > .info h2:hover, .informations > .info h3:hover {
+  text-decoration: underline;
+}
+.informations > .info > h2 {
+  font-weight: 900;
+  text-shadow: 0 0 0.5px dimgrey;
+  text-overflow: ellipsis;
+  overflow-x: clip;
+}
+.informations > .info > h3 {
+  font-weight: 100;
+  margin: 5px 0 0 0;
+}
+
+.heart {
+  position: relative;
+  align-self: center;
+  height: 25px;
+  width: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.heart svg {
+  position: absolute;
+  transform-origin: bottom;
+  width: 100%;
+}
+.heart svg:first-child {
+  height: 100%;
+  fill: transparent;
+}
+.heart svg:first-child > path {
+  stroke-linejoin: round;
+  /* Forme de la terminaison de la bordure */
+  stroke: rgba(0, 0, 0, 0.65);
+  /* Couleur de la bordure */
+  stroke-width: 20;
+  /* Epaisseur de la bordure */
+}
+.heart svg:last-child {
+  bottom: 0;
+  left: 0;
+  transition: height 0.3s ease-in-out;
+  height: 0%;
+  /* Hauteur à 0% au départ, qui rend invisible le décor intérieur du coeur */
+}
+.heart svg:last-child > path {
+  fill: url(#Gradient1);
+  /* Motif de remplissage */
+}
+.heart:hover svg:last-child {
+  /* Remplir le coeur */
+  -webkit-animation: fillHeart 0.5s linear;
+          animation: fillHeart 0.5s linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.heart:hover svg:first-child > path {
+  /* Effacer la bordure après l'animation de remplissage */
+  stroke-width: 0;
+  transition: stroke-width 1s ease-in-out;
+}
+
+@media screen and (min-width: 360px) {
+  .container .fBlock h3 {
+    font-size: 1em;
+    padding: 25px;
+  }
+
+  button > a {
+    font-size: 1.15em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-content: center;
+  }
+  .container .fBlock {
+    width: 310px;
+  }
+
+  .cards {
+    flex-direction: row;
+  }
+  .cards a.card {
+    width: calc((100% - 20px) / 2);
+  }
+
+  header > h1 {
+    font-size: 3.5em;
+  }
+
+  header.restau > div:first-child > a i {
+    font-size: 2em;
+  }
+  header.restau > div:first-child h1 {
+    font-size: 3em;
+  }
+
+  main:not(.restau) section > h2 {
+    text-align: center;
+  }
+  main.restau > .container {
+    justify-content: space-between;
+  }
+  main.restau > .container section {
+    width: calc((100% - 30px) / 2);
+  }
+  main.restau > .container section > h2 {
+    align-self: center;
+  }
+
+  footer {
+    text-align: center;
+  }
+  footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  footer ul span {
+    display: none;
+  }
+  footer .fa-solid {
+    font-size: 1.5em;
+  }
+}
+@media screen and (min-width: 992px) {
+  header > h1 {
+    font-size: 5em;
+  }
+  header input {
+    width: 30%;
+  }
+
+  header.restau > div:first-child > a i {
+    font-size: 3em;
+  }
+  header.restau > div:first-child h1 {
+    font-size: 5em;
+  }
+
+  .container {
+    flex-direction: row;
+    align-content: flex-start;
+  }
+  .container .fBlock {
+    width: 290px;
+  }
+
+  main > button > a {
+    font-size: 1.1em;
+  }
+
+  main.restau > .container section {
+    width: calc((100% - 40px) / 3);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .cards a.card {
+    width: calc((100% - 60px) / 4);
+  }
+}
+header.restau > div:first-child {
+  position: relative;
+  display: flex;
+  width: 100%;
+  box-shadow: 0 0 5px rgb(140, 140, 140);
+}
+header.restau > div:first-child > a {
+  position: absolute;
+  left: 2%;
+  align-self: center;
+}
+header.restau > div:first-child i {
+  font-size: 1.5em;
+  text-shadow: 0 0 2px black;
+}
+header.restau > div:first-child i:hover {
+  color: #9356DC;
+}
+header.restau h1 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: "Shrikhand";
+  font-size: 2em;
+  padding: 15px 0;
+}
+header.restau > .wrapper {
+  position: relative;
+  max-height: 275px;
+  overflow: hidden;
+}
+header.restau > .wrapper > img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0 -300px;
+     object-position: 0 -300px;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+}
+header.restau > .wrapper > .title {
+  position: absolute;
+  display: flex;
+  align-self: normal;
+  padding: 30px 15px;
+  padding-bottom: 0;
+  border-radius: 35px 35px 0 0;
+  background: #F8F8F8;
+  width: 100%;
+  bottom: 0;
+}
+header.restau > .wrapper > .title > h2 {
+  font-family: "Shrikhand";
+  font-size: 1.5em;
+  width: 100%;
+}
+header.restau > .wrapper > .title > h2:first-letter {
+  text-transform: uppercase;
+}
+header.restau > .wrapper > .title > .heart {
+  height: 25px;
+}
+
+main.restau {
+  padding: 40px 0 60px 0;
+  background: #F8F8F8;
+}
+main.restau .container {
+  gap: 20px;
+}
+main.restau section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+  padding: 15px;
+  padding-top: 0;
+  flex: auto;
+  visibility: visible;
+  /* Affichage progressif des "cadres" en jouant sur l'opacité */
+  /* Pour chaque <section> */
+  /* Pour chaque <section> */
+  /* Pour chaque <section> */
+  /* Pour chaque <section> */
+}
+main.restau section > h2 {
+  font-size: 1em;
+  font-weight: normal;
+  text-shadow: none;
+  letter-spacing: normal;
+  -webkit-margin-after: 10px;
+          margin-block-end: 10px;
+  text-transform: uppercase;
+  align-self: flex-start;
+}
+main.restau section span {
+  position: absolute;
+  width: 40px;
+  background: #99E2D0;
+  height: 3px;
+  margin-top: 22px;
+}
+main.restau section > article.meals {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 15px;
+  overflow: hidden;
+  opacity: 0;
+  background: #ffffff;
+  box-shadow: 0px 1px 12px #ccc;
+  cursor: pointer;
+}
+main.restau section > article.meals > .meal-info {
+  width: 100%;
+  padding: 12px 10px;
+  overflow: hidden;
+}
+main.restau section > article.meals > .meal-info h2 {
+  font-weight: bold;
+  font-size: 1.1em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+main.restau section > article.meals > .meal-info h3 {
+  font-weight: 100;
+  font-size: 1.05em;
+  -webkit-margin-before: 5px;
+          margin-block-start: 5px;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+main.restau section > article.meals > .price {
+  display: flex;
+  align-items: flex-end;
+  padding: 12px 25px;
+}
+main.restau section > article.meals > .price h2 {
+  font-weight: bold;
+  font-size: 0.9em;
+}
+main.restau section > article.meals > .buy {
+  display: flex;
+  align-items: center;
+  justify-content: unset;
+  background: linear-gradient(45deg, #99E2D0, rgb(143, 223, 203), rgb(105, 223, 193));
+  color: #f1f1f1;
+  font-size: 1.5em;
+  width: 0;
+  -webkit-animation: reveal-out 0.2s linear;
+          animation: reveal-out 0.2s linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+main.restau section > article.meals:hover .meal-info, main.restau section > article.meals:hover .price {
+  background: rgba(80, 80, 80, 0.05);
+}
+main.restau section > article.meals:hover .buy {
+  justify-content: center;
+  -webkit-animation: reveal-in 0.2s linear;
+          animation: reveal-in 0.2s linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+main.restau section > article.meals:hover .buy > i {
+  -webkit-animation: turn-in 0.3s linear;
+          animation: turn-in 0.3s linear;
+}
+main.restau section > article.meals:hover .buy > i:before {
+  color: #ffffff;
+}
+main.restau section:nth-child(1) {
+  /* Pour chaque <article> */
+  /* Pour chaque <article> */
+  /* Pour chaque <article> */
+  /* Pour chaque <article> */
+  /* Pour chaque <article> */
+}
+main.restau section:nth-child(1) article.meals:nth-child(1) {
+  /* Réglage du moment d'exécution */
+  -webkit-animation: opacity 0.3s linear 0.2s;
+          animation: opacity 0.3s linear 0.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /* Contrôle dans le terminal */
+}
+main.restau section:nth-child(1) article.meals:nth-child(2) {
+  /* Réglage du moment d'exécution */
+  -webkit-animation: opacity 0.3s linear 0.4s;
+          animation: opacity 0.3s linear 0.4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /* Contrôle dans le terminal */
+}
+main.restau section:nth-child(1) article.meals:nth-child(3) {
+  /* Réglage du moment d'exécution */
+  -webkit-animation: opacity 0.3s linear 0.6s;
+          animation: opacity 0.3s linear 0.6s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /* Contrôle dans le terminal */
+}
+main.restau section:nth-child(1) article.meals:nth-child(4) {
+  /* Réglage du moment d'exécution */
+  -webkit-animation: opacity 0.3s linear 0.8s;
+          animation: opacity 0.3s linear 0.8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /* Contrôle dans le terminal */
+}
+main.restau section:nth-child(1) article.meals:nth-child(5) {
+  /* Réglage du moment d'exécution */
+  -webkit-animation: opacity 0.3s linear 1s;
+          animation: opacity 0.3s linear 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /* Contrôle dans le terminal */
+}
+main.restau section:nth-child(2) {
+  /* Pour chaque <article> */
+  /* Pour chaque <article> */
+  /* Pour chaque <article> */
+  /* Pour chaque <article> */
+  /* Pour chaque <article> */
+}
+main.restau section:nth-child(2) article.meals:nth-child(1) {
+  /* Réglage du moment d'exécution */
+  -webkit-animation: opacity 0.3s linear 1.2s;
+          animation: opacity 0.3s linear 1.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /* Contrôle dans le terminal */
+}
+main.restau section:nth-child(2) article.meals:nth-child(2) {
+  /* Réglage du moment d'exécution */
+  -webkit-animation: opacity 0.3s linear 1.4s;
+          animation: opacity 0.3s linear 1.4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /* Contrôle dans le terminal */
+}
+main.restau section:nth-child(2) article.meals:nth-child(3) {
+  /* Réglage du moment d'exécution */
+  -webkit-animation: opacity 0.3s linear 1.6s;
+          animation: opacity 0.3s linear 1.6s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /* Contrôle dans le terminal */
+}
+main.restau section:nth-child(2) article.meals:nth-child(4) {
+  /* Réglage du moment d'exécution */
+  -webkit-animation: opacity 0.3s linear 1.8s;
+          animation: opacity 0.3s linear 1.8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /* Contrôle dans le terminal */
+}
+main.restau section:nth-child(2) article.meals:nth-child(5) {
+  /* Réglage du moment d'exécution */
+  -webkit-animation: opacity 0.3s linear 2s;
+          animation: opacity 0.3s linear 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /* Contrôle dans le terminal */
+}
+main.restau section:nth-child(3) {
+  /* Pour chaque <article> */
+  /* Pour chaque <article> */
+  /* Pour chaque <article> */
+  /* Pour chaque <article> */
+  /* Pour chaque <article> */
+}
+main.restau section:nth-child(3) article.meals:nth-child(1) {
+  /* Réglage du moment d'exécution */
+  -webkit-animation: opacity 0.3s linear 2.2s;
+          animation: opacity 0.3s linear 2.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /* Contrôle dans le terminal */
+}
+main.restau section:nth-child(3) article.meals:nth-child(2) {
+  /* Réglage du moment d'exécution */
+  -webkit-animation: opacity 0.3s linear 2.4s;
+          animation: opacity 0.3s linear 2.4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /* Contrôle dans le terminal */
+}
+main.restau section:nth-child(3) article.meals:nth-child(3) {
+  /* Réglage du moment d'exécution */
+  -webkit-animation: opacity 0.3s linear 2.6s;
+          animation: opacity 0.3s linear 2.6s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /* Contrôle dans le terminal */
+}
+main.restau section:nth-child(3) article.meals:nth-child(4) {
+  /* Réglage du moment d'exécution */
+  -webkit-animation: opacity 0.3s linear 2.8s;
+          animation: opacity 0.3s linear 2.8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /* Contrôle dans le terminal */
+}
+main.restau section:nth-child(3) article.meals:nth-child(5) {
+  /* Réglage du moment d'exécution */
+  -webkit-animation: opacity 0.3s linear 3s;
+          animation: opacity 0.3s linear 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /* Contrôle dans le terminal */
+}
+main.restau section:nth-child(4) {
+  /* Pour chaque <article> */
+  /* Pour chaque <article> */
+  /* Pour chaque <article> */
+  /* Pour chaque <article> */
+  /* Pour chaque <article> */
+}
+main.restau section:nth-child(4) article.meals:nth-child(1) {
+  /* Réglage du moment d'exécution */
+  -webkit-animation: opacity 0.3s linear 3.2s;
+          animation: opacity 0.3s linear 3.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /* Contrôle dans le terminal */
+}
+main.restau section:nth-child(4) article.meals:nth-child(2) {
+  /* Réglage du moment d'exécution */
+  -webkit-animation: opacity 0.3s linear 3.4s;
+          animation: opacity 0.3s linear 3.4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /* Contrôle dans le terminal */
+}
+main.restau section:nth-child(4) article.meals:nth-child(3) {
+  /* Réglage du moment d'exécution */
+  -webkit-animation: opacity 0.3s linear 3.6s;
+          animation: opacity 0.3s linear 3.6s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /* Contrôle dans le terminal */
+}
+main.restau section:nth-child(4) article.meals:nth-child(4) {
+  /* Réglage du moment d'exécution */
+  -webkit-animation: opacity 0.3s linear 3.8s;
+          animation: opacity 0.3s linear 3.8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /* Contrôle dans le terminal */
+}
+main.restau section:nth-child(4) article.meals:nth-child(5) {
+  /* Réglage du moment d'exécution */
+  -webkit-animation: opacity 0.3s linear 4s;
+          animation: opacity 0.3s linear 4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /* Contrôle dans le terminal */
+}
+
+button {
+  position: relative;
+  padding: 15px 20px;
+  border-radius: 30px;
+  border: none;
+  background-image: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
+  transition: 0.5s;
+  overflow: hidden;
+  cursor: pointer;
+}
+button > a {
+  position: relative;
+  /* Permet de conserver le texte du bouton au premier plan */
+  margin: 0;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  z-index: 100;
+  color: #ffffff;
+}
+button.search {
+  background: radial-gradient(ellipse at top, #fff, transparent), radial-gradient(ellipse at bottom, #4d9f0c, transparent);
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 0 10px 10px 0;
+  border-left: none;
+  padding: 0 15px;
+  color: green;
+  text-shadow: 0 0 1px green;
+  font-size: 0.9em;
+  box-shadow: unset;
+  margin: 0;
+}
+button.search:hover {
+  background: radial-gradient(#e7e9ec, #d3a936);
+  color: #000;
+  text-shadow: 0 0 1px #000;
+}
+button.btn-command {
+  align-self: center;
+  width: 200px;
+  margin-top: 40px;
+  padding: 20px 30px;
+  font-size: 1em;
+}
+button.btn-command:hover {
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+  filter: brightness(1.1);
+}
+button.btn-command:hover a {
+  font-size: 1.1em;
+  text-shadow: 0 0 2px #000;
+  transition: font-size 0.5s ease;
+}
+
+.effet-3d:hover {
+  /* Utilisation : <h1 class="effet_3d">ohmyfood</h1> */
+  color: white;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #acacac, 0 3px 0 #a0a0a0, 0 4px 0 #9b9a9a, 0 5px 0 #888787, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.3), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+a.btn-pink {
+  padding: 20px 30px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
+  transition: 0.5s;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 1em;
+  color: #fff;
+}
+a.btn-pink:hover {
+  border-radius: 0;
+}
+
+.effet-gold:hover {
+  position: relative;
+  background: linear-gradient(to bottom, #cfc09f 22%, #634f2c 24%, #cfc09f 26%, #cfc09f 27%, #ffecb3 40%, #3a2c0f 78%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  /* Utilisation : <h1 class="effet-gold" data-heading="ohmyfood">ohmyfood</h1> */
+}
+.effet-gold:hover:after {
+  content: attr(data-heading);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  position: absolute;
+  text-shadow: -1px 0 1px #ccc, 0 0px 1px #ccc, 0px 6px 10px rgba(0, 0, 0, 0.8), 5px 5px 5px rgba(250, 0, 0, 0.4);
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3N0eWxlLmNzcyIsIi4uL1NBU1MvYmFzZS9faW5pdC5zY3NzIiwiLi4vU0FTUy9jb21wb25lbnRzL19hbmltYXRpb25zLnNjc3MiLCIuLi9TQVNTL2xheW91dHMvX2Zvb3Rlci5zY3NzIiwiLi4vU0FTUy9sYXlvdXRzL19oZWFkZXIuc2NzcyIsIi4uL1NBU1MvbGF5b3V0cy9fbWFpbi5zY3NzIiwiLi4vU0FTUy9wYWdlcy9faW5kZXguc2NzcyIsIi4uL1NBU1MvdXRpbHMvX21peGlucy5zY3NzIiwiLi4vU0FTUy9wYWdlcy9fcmVzdGF1cmFudHMuc2NzcyIsIi4uL1NBU1MvdXRpbHMvX3ZhcmlhYmxlcy5zY3NzIiwiLi4vU0FTUy9jb21wb25lbnRzL19idXR0b25zLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsZ0JBQWdCO0FDQVIsOEVBQUE7QUFDQSwyRUFBQTtBQUVSO0VBQ0ksc0JBQUE7RUFDQSxxQkFBQTtBRENKOztBQ0VBO0VBQ0ksY0FBQTtBRENKOztBQ0NBO0VBQ0ksZUFBQTtFQUNBLFNBQUE7RUFDQSxtQkFBQTtBREVKOztBQ0FBO0VBQ0kscUJBQUE7RUFDQSxxQkFBQTtFQUNBLFdBQUE7QURHSjs7QUNEQTtFQUNJLDZCQUFBO1VBQUEscUJBQUE7RUFDQSxXQUFBO0FESUo7O0FDRkE7RUFDSywyQkFBQTtBREtMOztBQ0hBO0VBQ0ksU0FBQTtBRE1KOztBRW5DQSxpREFBQTtBQUNBLDZCQUFBO0FBQ0E7RUFDRTtJQUFPLFVBQUE7RUZ1Q1A7RUV0Q0E7SUFBTyxZQUFBO0VGeUNQO0FBQ0Y7QUU1Q0E7RUFDRTtJQUFPLFVBQUE7RUZ1Q1A7RUV0Q0E7SUFBTyxZQUFBO0VGeUNQO0FBQ0Y7QUV2Q0EscURBQUE7QUFDQTtFQUNJO0lBQU8sbUJBQUE7RUYwQ1Q7RUV6Q0U7SUFBTyxzQkFBQTtFRjRDVDtFRTNDRTtJQUFPLG1CQUFBO0VGOENUO0FBQ0Y7QUVsREE7RUFDSTtJQUFPLG1CQUFBO0VGMENUO0VFekNFO0lBQU8sc0JBQUE7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QUMrQyxrQ0FBQTtFQUMzQywyQ0FBQTtVQUFBLG1DQUFBO0VBQ0EscUNBQUE7VUFBQSw2QkFBQTtFQUVBLDhCQUFBO0FSa3BCeEI7QVF2cEJvQjtFQUMrQyxrQ0FBQTtFQUMzQywyQ0FBQTtVQUFBLG1DQUFBO0VBQ0EscUNBQUE7VUFBQSw2QkFBQTtFQUVBLDhCQUFBO0FSd3BCeEI7QVE3cEJvQjtFQUMrQyxrQ0FBQTtFQUMzQyx5Q0FBQTtVQUFBLGlDQUFBO0VBQ0EscUNBQUE7VUFBQSw2QkFBQTtFQUVBLDhCQUFBO0FSOHBCeEI7O0FVOTFCQTtFQUNJLGtCQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLFlBQUE7RUFDQSxtRUFBQTtFQUNBLDhDQUFBO0VBQ0EsY0FBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxlQUFBO0FWaTJCSjtBVS8xQkk7RUFDSSxrQkFBQTtFQUFnQywyREFBQTtFQUNoQyxTQUFBO0VBQ0EsY0FBQTtFQUNBLHNCQUFBO0VBQ0EsWUFBQTtFQUNBLGNBQUE7QVZrMkJSO0FVLzFCSTtFQUNJLHdIQUFBO0VBRUEsYUFBQTtFQUNBLHNCQUFBO0VBQ0EsNEJBQUE7RUFDQSxpQkFBQTtFQUNBLGVBQUE7RUFDQSxZQUFBO0VBQ0EsMEJBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0VBQ0EsU0FBQTtBVmcyQlI7QVU5MUJRO0VBQ0ksNkNBQUE7RUFDQSxXQUFBO0VBQ0EseUJBQUE7QVZnMkJaO0FVNTFCSTtFQUNJLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxjQUFBO0FWODFCUjtBVTUxQlE7RUFPSSw4Q0FBQTtFQUNBLHVCQUFBO0FWdzFCWjtBVS8xQlk7RUFDSSxnQkFBQTtFQUNBLHlCQUFBO0VBQ0EsK0JBQUE7QVZpMkJoQjs7QVV4MUJBO0VBQ0kscURBQUE7RUFDQSxZQUFBO0VBQ0Esb1RBQ0k7RUFJSixlQUFBO0FWdTFCSjs7QVVwMUJBO0VBQ0ksa0JBQUE7RUFDQSxtQkFBQTtFQUNBLDZEQUFBO0VBQ0EsOENBQUE7RUFDQSxjQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7RUFDQSxvQkFBQTtFQUNBLGNBQUE7RUFDQSxXQUFBO0FWdTFCSjtBVXIxQkk7RUFDSSxnQkFBQTtBVnUxQlI7O0FVLzBCQTtFQUNJLGtCQUFBO0VBQ0Esb0hBQUE7RUFDQSw2QkFBQTtFQUNBLG9DQUFBO0VBQ0EsV0FBQTtFQUNBLGVBQUE7RUFDQSwrRUFBQTtBVmsxQko7QVVoMUJJO0VBQ0ksMkJBQUE7RUFDQSxTQUFBO0VBQ0EsUUFBQTtFQUNBLGdDQUFBO0VBQ0EsV0FBQTtFQUNBLGtCQUFBO0VBQ0EsK0dBQUE7QVZrMUJSIiwiZmlsZSI6InN0eWxlLmNzcyJ9 */
