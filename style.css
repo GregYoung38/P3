@@ -31,18 +31,10 @@ a {
   font-weight: 600 !important;
 }
 
-/* Animation au survol du bouton "Explorez nos restaurants" (Effet rideau inversé) */
-@keyframes colors-palette {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
+figure {
+  margin: 0;
 }
+
 /* Animation au survol des Coeurs (Effet vague) */
 /* --> Remplissage du coeur */
 @keyframes fillHeart {
@@ -53,7 +45,6 @@ a {
     height: 100%;
   }
 }
-/* --> Effet vague */
 /* Animation au survol des Images (très léger zoom) */
 @keyframes pulse {
   0% {
@@ -83,14 +74,12 @@ a {
     width: 0;
   }
 }
-@keyframes turn-in {
+@keyframes opacity {
   from {
-    transform-origin: center;
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform-origin: center;
-    transform: rotate(780deg);
+    opacity: 1;
   }
 }
 @keyframes majax {
@@ -101,6 +90,16 @@ a {
     opacity: 0;
   }
 }
+@keyframes turn-in {
+  from {
+    transform-origin: center;
+    transform: rotate(0deg);
+  }
+  to {
+    transform-origin: center;
+    transform: rotate(780deg);
+  }
+}
 @keyframes showsections {
   from {
     visibility: hidden;
@@ -109,12 +108,157 @@ a {
     visibility: visible;
   }
 }
-@keyframes opacity {
-  from {
-    opacity: 0;
+@keyframes shake-slow {
+  /* https://github.com/elrumordelaluz/csshake/tree/master/dist */
+  2% {
+    transform: translate(1px, 5px) rotate(-1.5deg);
   }
-  to {
-    opacity: 1;
+  4% {
+    transform: translate(7px, 4px) rotate(-2.5deg);
+  }
+  6% {
+    transform: translate(8px, -2px) rotate(-0.5deg);
+  }
+  8% {
+    transform: translate(2px, 10px) rotate(0.5deg);
+  }
+  10% {
+    transform: translate(3px, 0px) rotate(-1.5deg);
+  }
+  12% {
+    transform: translate(-8px, 9px) rotate(-1.5deg);
+  }
+  14% {
+    transform: translate(-9px, -6px) rotate(-0.5deg);
+  }
+  16% {
+    transform: translate(8px, -2px) rotate(0.5deg);
+  }
+  18% {
+    transform: translate(-1px, -5px) rotate(1.5deg);
+  }
+  20% {
+    transform: translate(-2px, -5px) rotate(-2.5deg);
+  }
+  22% {
+    transform: translate(-4px, -3px) rotate(-2.5deg);
+  }
+  24% {
+    transform: translate(-7px, 5px) rotate(-0.5deg);
+  }
+  26% {
+    transform: translate(-5px, 5px) rotate(1.5deg);
+  }
+  28% {
+    transform: translate(-1px, 6px) rotate(3.5deg);
+  }
+  30% {
+    transform: translate(-2px, 6px) rotate(-0.5deg);
+  }
+  32% {
+    transform: translate(2px, 10px) rotate(-0.5deg);
+  }
+  34% {
+    transform: translate(-9px, 1px) rotate(0.5deg);
+  }
+  36% {
+    transform: translate(-7px, 5px) rotate(3.5deg);
+  }
+  38% {
+    transform: translate(-7px, 9px) rotate(1.5deg);
+  }
+  40% {
+    transform: translate(7px, -8px) rotate(-0.5deg);
+  }
+  42% {
+    transform: translate(8px, 7px) rotate(-0.5deg);
+  }
+  44% {
+    transform: translate(-3px, -2px) rotate(0.5deg);
+  }
+  46% {
+    transform: translate(1px, 2px) rotate(-2.5deg);
+  }
+  48% {
+    transform: translate(-6px, -2px) rotate(-2.5deg);
+  }
+  50% {
+    transform: translate(-8px, -1px) rotate(-1.5deg);
+  }
+  52% {
+    transform: translate(5px, 10px) rotate(-1.5deg);
+  }
+  54% {
+    transform: translate(7px, -9px) rotate(3.5deg);
+  }
+  56% {
+    transform: translate(-7px, -5px) rotate(0.5deg);
+  }
+  58% {
+    transform: translate(3px, 3px) rotate(0.5deg);
+  }
+  60% {
+    transform: translate(4px, -5px) rotate(3.5deg);
+  }
+  62% {
+    transform: translate(9px, 9px) rotate(1.5deg);
+  }
+  64% {
+    transform: translate(-5px, 10px) rotate(-0.5deg);
+  }
+  66% {
+    transform: translate(-8px, -9px) rotate(-2.5deg);
+  }
+  68% {
+    transform: translate(-4px, -8px) rotate(-2.5deg);
+  }
+  70% {
+    transform: translate(6px, -8px) rotate(1.5deg);
+  }
+  72% {
+    transform: translate(8px, -6px) rotate(-1.5deg);
+  }
+  74% {
+    transform: translate(-6px, 7px) rotate(1.5deg);
+  }
+  76% {
+    transform: translate(2px, 5px) rotate(-1.5deg);
+  }
+  78% {
+    transform: translate(2px, 0px) rotate(-2.5deg);
+  }
+  80% {
+    transform: translate(-7px, 3px) rotate(-2.5deg);
+  }
+  82% {
+    transform: translate(-9px, -4px) rotate(0.5deg);
+  }
+  84% {
+    transform: translate(4px, 9px) rotate(3.5deg);
+  }
+  86% {
+    transform: translate(-7px, 6px) rotate(-0.5deg);
+  }
+  88% {
+    transform: translate(3px, -3px) rotate(-1.5deg);
+  }
+  90% {
+    transform: translate(1px, -3px) rotate(-0.5deg);
+  }
+  92% {
+    transform: translate(4px, 3px) rotate(2.5deg);
+  }
+  94% {
+    transform: translate(9px, 1px) rotate(3.5deg);
+  }
+  96% {
+    transform: translate(-8px, 3px) rotate(0.5deg);
+  }
+  98% {
+    transform: translate(-8px, -7px) rotate(-2.5deg);
+  }
+  0%, 100% {
+    transform: translate(0, 0) rotate(0);
   }
 }
 /* Footer */
@@ -189,7 +333,7 @@ header > div.location input {
   border: none;
   background: transparent;
   transition: 0.3s;
-  width: 110px;
+  width: 120px;
 }
 header > div.location input:hover {
   cursor: pointer;
@@ -209,11 +353,12 @@ header > div.location input:focus ~ .search {
 main {
   display: flex;
   flex-direction: column;
+  /* Ce qui suit concerne uniquement le spinner et son animation */
 }
 main:not(.restau) section {
   visibility: hidden;
-  /* Délai d'exécution : 0.5s + 0.5s + 3s + 1s = 5s ==> On a ainsi l'assurance que cette animation-là, s'exécutera après toutes les autres (système D peut-être ?) */
-  animation: showsections 1s linear 5s;
+  /* Délai d'exécution : 4s + 1s = 5s ==> On a ainsi l'assurance que cette animation-là, s'exécutera après toutes les autres */
+  animation: showsections 2s linear 5s;
   animation-fill-mode: forwards;
 }
 main > i {
@@ -236,12 +381,14 @@ main > i {
   /* On se rend compte ici qu'en utilisant transform: translateX(-50%), l'animation est décalée vers la droite.. */
   /* animation: turn-in 3s infinite linear 1s; */
   /* Succession de fonctions d'animation, les unes après les autres */
-  animation: opacity 0.5s linear 0.5s, turn-in 3s infinite linear 1s, majax 1s linear 4s;
+  animation: opacity 0.3s linear, turn-in 3s infinite linear 0.5s, majax 1s linear 4s;
   /* Conserver le dernier état sur la timeline de l'animation, sinon on revient à l'affichage de départ (=> backwards) */
   animation-fill-mode: forwards;
 }
 
-/* Section : Réservation */
+section {
+  visibility: hidden;
+}
 section.reservation {
   text-align: center;
   padding: 40px 0;
@@ -250,51 +397,14 @@ section.reservation {
 section.reservation > h2 {
   padding: 0 60px;
 }
-
 section.fonctionnement, section.restaurants {
   padding: 55px 20px;
 }
 section.fonctionnement > h2, section.restaurants > h2 {
   margin-bottom: 25px;
 }
-
-/* Section : Restaurant */
 section.restaurants {
   background: #F8F8F8;
-}
-
-button {
-  position: relative;
-  padding: 15px 20px;
-  border-radius: 30px;
-  border: none;
-  background-image: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
-  margin: 20px 0;
-  transition: 0.5s;
-  overflow: hidden;
-  cursor: pointer;
-}
-button > a {
-  position: relative;
-  /* Permet de conserver le texte du bouton au premier plan */
-  margin: 0;
-  font-size: 1em;
-  letter-spacing: 0.05em;
-  z-index: 100;
-  color: #ffffff;
-}
-button span {
-  position: absolute;
-}
-button.btn-pink:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  transform: scale(0.95);
-}
-
-/* Sections {communs} */
-section {
-  visibility: hidden;
 }
 section > h2 {
   font-size: 1.4em;
@@ -451,7 +561,6 @@ section > h3 {
   height: 25px;
   width: 25px;
   margin-right: 10px;
-  overflow: hidden;
   cursor: pointer;
 }
 .heart svg {
@@ -459,38 +568,38 @@ section > h3 {
   transform-origin: bottom;
   width: 100%;
 }
-.heart svg.first {
+.heart svg:first-child {
   height: 100%;
   fill: transparent;
-  z-index: 10;
 }
-.heart svg.first:hover ~ .second {
-  animation: fillHeart 0.5s linear;
-  animation-fill-mode: forwards;
+.heart svg:first-child > path {
+  stroke-linejoin: round;
+  /* Forme de la terminaison de la bordure */
+  stroke: black;
+  /* Couleur de la bordure */
+  stroke-width: 20;
+  /* Epaisseur de la bordure */
 }
-.heart svg.second {
+.heart svg:last-child {
   bottom: 0;
   left: 0;
-  z-index: 5;
   transition: height 0.3s ease-in-out;
   height: 0%;
+  /* Hauteur à 0% au départ, qui rend invisible le décor intérieur du coeur */
 }
-.heart svg.second:hover {
+.heart svg:last-child > path {
+  fill: url(#Gradient1);
+  /* Motif de remplissage */
+}
+.heart:hover svg:last-child {
+  /* Remplir le coeur */
   animation: fillHeart 0.5s linear;
   animation-fill-mode: forwards;
 }
-.my-shape {
+.heart:hover svg:first-child > path {
+  /* Effacer la bordure après l'animation de remplissage */
   stroke-width: 0;
-  stroke: white;
-}
-
-.heart svg path.my-shape {
-  stroke-linejoin: round;
-  stroke: black;
-  stroke-width: 20;
-}
-.heart svg path.my-fill {
-  fill: url(#Gradient1);
+  transition: stroke-width 1s ease-in-out;
 }
 
 @media screen and (min-width: 360px) {
@@ -509,7 +618,7 @@ section > h3 {
     align-content: center;
   }
   .container .fBlock {
-    width: 290px;
+    width: 310px;
   }
 
   .cards {
@@ -903,38 +1012,28 @@ main.restau section:nth-child(4) article.meals:nth-child(5) {
   /* Contrôle dans le terminal */
 }
 
-button.btn-command {
-  margin: 0 auto;
-  width: 200px;
-  padding: 20px 30px;
+button {
+  position: relative;
+  padding: 15px 20px;
+  border-radius: 30px;
+  border: none;
+  background-image: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
+  transition: 0.5s;
+  overflow: hidden;
+  cursor: pointer;
 }
-button.btn-command:hover {
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
-  filter: brightness(1.1);
+button > a {
+  position: relative;
+  /* Permet de conserver le texte du bouton au premier plan */
+  margin: 0;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  z-index: 100;
+  color: #ffffff;
 }
-button.btn-command a {
-  font-size: 1.1em;
-}
-
-button.btn-pink:before,
-button.btn-pink:after {
-  content: "";
-  position: absolute;
-  left: -2px;
-  top: -2px;
-  background-size: 400%;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  z-index: -1;
-  animation: colors-palette 30s linear infinite;
-  background: linear-gradient(45deg, #fb0094, #5e5ecf, #00ff00, #b9b932, #ff0000, #fb0094, #5e5ecf, #00ff00, #b9b932, #ff0000);
-}
-
-button.btn-pink:after {
-  filter: blur(50px);
-}
-
-header button.search {
+button.search {
   background: radial-gradient(ellipse at top, #fff, transparent), radial-gradient(ellipse at bottom, #4d9f0c, transparent);
   outline: none;
   border: 1px solid #ccc;
@@ -947,10 +1046,31 @@ header button.search {
   box-shadow: unset;
   margin: 0;
 }
-header button.search:hover {
+button.search:hover {
   background: radial-gradient(#e7e9ec, #d3a936);
   color: #000;
   text-shadow: 0 0 1px #000;
+}
+button.btn-pink:hover {
+  animation-name: shake-slow;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+button.btn-command {
+  margin: 0 auto;
+  width: 200px;
+  padding: 20px 30px;
+  font-size: 1em;
+}
+button.btn-command:hover {
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+  filter: brightness(1.1);
+}
+button.btn-command:hover a {
+  font-size: 1.1em;
+  text-shadow: 0 0 2px #000;
+  transition: font-size 0.5s ease;
 }
 
 .effet-3d:hover {

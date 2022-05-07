@@ -30,34 +30,32 @@ header {
             align-self: center;
         }
 
-        // & label {
-            & input{
-                align-self: center;
-                font-weight: 700;
-                font-size: 1em;
-                margin-left: 10px;
-                outline: 0;
-                border: none;
-                background: transparent;
-                transition: .3s;
-                width: 110px;
+        & input{
+            align-self: center;
+            font-weight: 700;
+            font-size: 1em;
+            margin-left: 10px;
+            outline: 0;
+            border: none;
+            background: transparent;
+            transition: .3s;
+            width: 120px;
 
-                &:hover {
-                    cursor: pointer;
-                }
-
-                &:focus {
-                    padding: 5px 8px;
-                    background: #ffffff;
-                    border:1px solid #ccc;
-                    border-radius: 10px 0 0 10px;
-                    width: 50%;     
-                    
-                    ~.search {      /* Permet de réaliser une action sur élément frère.. ici le bouton */
-                        display: block;
-                    }                        
-                }  
+            &:hover {
+                cursor: pointer;
             }
-        // }
+
+            &:focus {
+                padding: 5px 8px;
+                background: #ffffff;
+                border:1px solid #ccc;
+                border-radius: 10px 0 0 10px;
+                width: 50%;     
+                
+                ~.search {      /* Permet de réaliser une action sur élément frère.. ici le bouton */
+                    display: block;
+                }                        
+            }  
+        }
     }
 }

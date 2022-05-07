@@ -1,62 +1,27 @@
-/* Section : Réservation */
-section.reservation {
-    text-align: center;
-    padding: 40px 0;
-    background: #F5F5F5;
-
-    &>h2 {
-        padding: 0 60px;         
-    }
-}
-
-section.fonctionnement, section.restaurants {
-    padding: 55px 20px;
-
-    &>h2 {
-        margin-bottom: 25px;
-    }
-}
-
-/* Section : Restaurant */
-section.restaurants {
-    background: #F8F8F8;
-}
-
-button {
-    position: relative;
-    padding: 15px 20px;
-    border-radius: 30px;
-    border: none;
-    background-image: linear-gradient(180deg, map-get($colors, second) 0%, map-get($colors, primary) 100%);
-    box-shadow: 0px 0px 5px 1px rgb(0 0 0 / 20%);    
-    margin: 20px 0;    
-    transition: 0.5s;
-    overflow: hidden;    
-    cursor: pointer;
-
-    &>a {
-        position: relative;             /* Permet de conserver le texte du bouton au premier plan */
-        margin: 0;
-        font-size: 1em;
-        letter-spacing: .05em;
-        z-index: 100;
-        color: #ffffff; 
-        // text-shadow: 0 0 1px #ffffff;
-    }
-
-    & span{
-        position: absolute;
-    }
-
-    &.btn-pink:hover {
-        @include box_shadow(3);
-        transform: scale(.95)
-    }
-}
-
-/* Sections {communs} */
 section {
     visibility: hidden; 
+
+    &.reservation {
+        text-align: center;
+        padding: 40px 0;
+        background: #F5F5F5;
+
+        &>h2 {
+            padding: 0 60px;         
+        }
+    }
+
+    &.fonctionnement, &.restaurants {
+        padding: 55px 20px;
+
+        &>h2 {
+            margin-bottom: 25px;
+        }
+    }
+
+    &.restaurants {
+        background: #F8F8F8;
+    }
 
     &>h2 {
         font-size: 1.4em;
@@ -149,14 +114,12 @@ section {
     & a.card {
         position: relative; 
         width: 100%;
-        // max-height: 255px;
 
         &>.wrapper {      
             display: flex; 
             flex-direction: column; 
             width: 100%; 
             height: 250px; 
-            // min-height: 240px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px lightgrey;
             overflow: hidden;
@@ -233,7 +196,6 @@ section {
     height: 25px;
     width: 25px;
     margin-right: 10px;
-    overflow: hidden; 
     cursor: pointer;
 
     & svg {
@@ -241,47 +203,36 @@ section {
         transform-origin: bottom;
         width: 100%;               
 
-        &.first {
+        &:first-child {
             height: 100%;
-            fill: transparent;     
-            z-index: 10;
+            fill: transparent; 
 
-            &:hover {    
-                & ~.second { 
-                    animation: fillHeart .5s linear;    
-                    animation-fill-mode: forwards;                     
-                }  
+            &>path { 
+                stroke-linejoin: round;   /* Forme de la terminaison de la bordure */
+                stroke: black;          /* Couleur de la bordure */
+                stroke-width: 20;         /* Epaisseur de la bordure */
             }
         }
-        &.second {            
+        &:last-child {      
             bottom: 0;
             left: 0;
-            z-index: 5;
             transition: height .3s ease-in-out ;       
-            height: 0%; 
-            
-            &:hover {                                
-                animation: fillHeart .5s linear;
-                animation-fill-mode: forwards;     
+            height: 0%;               /* Hauteur à 0% au départ, qui rend invisible le décor intérieur du coeur */
 
-                &::after {
-                    @at-root .my-shape {
-                        stroke-width: 0;
-                        stroke: white;
-                    }
-                }                
-            }
+            &>path {                 
+                fill: url(#Gradient1);     /* Motif de remplissage */
+            } 
         }
+    }
 
-        & path {
-            &.my-shape { 
-                stroke-linejoin: round;
-                stroke:black;
-                stroke-width: 20;
-            }
-            &.my-fill {                 
-                fill: url(#Gradient1); // fill: url(.waveShape);                   
-            }            
+    &:hover {    
+        & svg:last-child { /* Remplir le coeur */            
+            animation: fillHeart .5s linear;    
+            animation-fill-mode: forwards;                
+        }  
+        & svg:first-child>path {   /* Effacer la bordure après l'animation de remplissage */            
+            stroke-width: 0;
+            transition: stroke-width 1s ease-in-out ;    
         }
     }
 }

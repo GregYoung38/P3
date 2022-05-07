@@ -186,25 +186,10 @@ main.restau {
                         animation-fill-mode: forwards;
 
                         /* Contrôle dans le terminal */
-                        //@debug #{section} $n #{'/ élément n°'} $i #{'=> Exécution à'} $t #{'sec'};
+                        @debug #{section} $n #{'/ élément n°'} $i #{'=> Exécution à'} $t #{'sec'};
                     }
                 }
             }
         }
     }      
 }
-
-button.btn-command {
-    margin: 0 auto;
-    width: 200px;
-    padding: 20px 30px;
-
-    &:hover {
-        box-shadow: 0px 0px 5px 1px rgb(0 0 0 / 50%);
-        filter: brightness(1.1)
-    }
-
-    & a {
-        font-size: 1.1em;
-    }
-}    

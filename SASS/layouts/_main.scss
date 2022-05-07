@@ -2,11 +2,12 @@ main {
     display: flex; 
     flex-direction: column; 
 
+    /* Ce qui suit concerne uniquement le spinner et son animation */
     &:not(.restau) section {
         visibility: hidden;
-        /* Délai d'exécution : 0.5s + 0.5s + 3s + 1s = 5s ==> On a ainsi l'assurance que cette animation-là, s'exécutera après toutes les autres (système D peut-être ?) */
-        animation: showsections 1s linear 5s;  
-        animation-fill-mode: forwards;       
+        /* Délai d'exécution : 4s + 1s = 5s ==> On a ainsi l'assurance que cette animation-là, s'exécutera après toutes les autres */
+        animation: showsections 2s linear 5s;  
+        animation-fill-mode: forwards;               
     }
 
     &>i {
@@ -26,7 +27,7 @@ main {
         /* animation: turn-in 3s infinite linear 1s; */        
 
         /* Succession de fonctions d'animation, les unes après les autres */  
-        animation: opacity .5s linear .5s, turn-in 3s infinite linear 1s, majax 1s linear 4s;  
+        animation: opacity .3s linear, turn-in 3s infinite linear .5s, majax 1s linear 4s; 
 
         /* Conserver le dernier état sur la timeline de l'animation, sinon on revient à l'affichage de départ (=> backwards) */
         animation-fill-mode: forwards;
