@@ -35,12 +35,29 @@
         header>h1 {
             font-size: 3.5em;
         }
+        header.restau {
+            &>div:first-child {
+                &>a {
+                    & i {
+                        font-size: 2em;
+                    }
+                }
+                & h1 {
+                    font-size: 3em;
+                }
+            }
+        }
 
-        main.restau >.container {
-            justify-content: space-between;
-
-            & section {
-                width: calc((100% - 30px)/2);
+        main.restau {
+            &>.container {
+                justify-content: space-between;
+    
+                & section {
+                    width: calc((100% - 30px)/2);
+                }
+            }
+            &>button.btn-pink > a {
+                font-size: 1.3em;
             }
         }
 
@@ -75,6 +92,19 @@
                 width: 30%;
             }
         }
+        header.restau {
+            &>div:first-child {
+                &>a {
+                    & i {
+                        font-size: 3em;
+                    }
+                }
+                & h1 {
+                    font-size: 5em;
+                }
+            }
+        }
+
         .container .fBlock {
             width: calc((100% - 20px)/3);
         }

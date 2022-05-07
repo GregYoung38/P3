@@ -36,6 +36,7 @@ button.btn-pink:after {
 }
 
 .effet-3d:hover {	
+    /* Utilisation : <h1 class="effet_3d">ohmyfood</h1> */
     color: white;
     text-shadow: 
         0 1px 0 #ccc, 0 2px 0 #acacac, 0 3px 0 #a0a0a0, 0 4px 0 #9b9a9a, 0 5px 0 #888787,
@@ -52,6 +53,7 @@ button.btn-pink:after {
     -webkit-text-fill-color: transparent;
     color: #fff;
     cursor: pointer;
+    /* Utilisation : <h1 class="effet-gold" data-heading="ohmyfood">ohmyfood</h1> */
 
     &:after {
         content: attr(data-heading);

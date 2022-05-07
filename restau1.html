@@ -11,21 +11,23 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />        
         
         <link rel="stylesheet" type="text/css" href="./normalize.css" />
-        <link rel="stylesheet" type="text/css" href="./styler.css" />
+        <link rel="stylesheet" type="text/css" href="./style.css" />
         <script src="https://kit.fontawesome.com/59de80f43b.js"></script>
     </head>
 
     <body>                
         <header class="restau">
-            <h1 class="effet-gold" data-heading="ohmyfood">ohmyfood</h1>
+            <div>
+                <a href="./index.html"><i class="fa-solid fa-arrow-left"></i></a>
+                <h1>ohmyfood</h1>          
+            </div>              
 
             <div class='wrapper'>
-                <img class="position1"
-                     src='images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg' onclick="location.href='index.html'"
+                <img src='images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg'
                      alt='a_la_francaise'>
 
-                <div class="title"> 
-                    <h2>A la française</h2>
+                <div class="title">
+                    <h2>à la française</h2>
     
                     <div class="heart">    
                         <img src='./images/symbols/heart2.webp' alt="heart" />
@@ -56,7 +58,8 @@
         <main class="restau">
             <div class="container">            
                 <section class="entrees">
-                    <h2>ENTREES</h2>
+                    <h2>entrées</h2>
+                    <span></span>
                     
                     <article class="meals">
                         <div class="meal-info">
@@ -105,7 +108,8 @@
                 </section>
 
                 <section class="plats">
-                    <h2>PLATS</h2>
+                    <h2>plats</h2>
+                    <span></span>
                     
                     <article class="meals">
                         <div class="meal-info">
@@ -154,7 +158,8 @@
                 </section>
 
                 <section class="desserts">
-                    <h2>DESSERTS</h2>
+                    <h2>desserts</h2>
+                    <span></span>
                     
                     <article class="meals">
                         <div class="meal-info">
@@ -203,7 +208,7 @@
                 </section>
             </div>
 
-            <button class="btn-pink">   
+            <button class="btn-pink btn-command">   
                 <span></span>
                 <a href="#">Commander</a>
             </button>

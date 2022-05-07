@@ -162,14 +162,6 @@ section {
                 height: 100%;
                 cursor: pointer;
 
-                /* Les classes {pic} devront être modifiées pour le responsive, pour obtenir un visuel axé sur la partie voulue de l'image */
-                &.position1 {
-                    object-position: 0 100%;
-                }
-                &.position2 {
-                    object-position: 0 62%;
-                }
-
                 &.pulse:hover { 
                     animation: pulse 1s linear
                 }
@@ -231,7 +223,7 @@ section {
     position: relative;
     align-self: center;
     height: 30px;
-    width: 30px;
+    width: 25px;
     margin-right: 10px;
     overflow: hidden; 
     cursor: pointer;
