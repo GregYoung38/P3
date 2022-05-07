@@ -26,7 +26,7 @@ header.restau {
         width: 100%;
         font-family: "Shrikhand";
         font-size: 2em;            
-        padding: 20px 0;
+        padding: 15px 0;
     }
 
     &>.wrapper {
@@ -92,14 +92,16 @@ main.restau {
             font-weight: normal;
             text-shadow: none;
             letter-spacing: normal;
-            margin-block-end: 0;
+            margin-block-end: 10px;
             text-transform: uppercase;
+            align-self: flex-start;
         }
         & span {
-            width: 25px;
+            position: absolute;
+            width: 40px;
             background: map-get($colors, third);
-            height: 5px;
-            margin-top: -5px;
+            height: 3px;
+            margin-top: 22px;
         }
 
         &>article.meals {
@@ -196,6 +198,11 @@ button.btn-command {
     margin: 0 auto;
     width: 200px;
     padding: 20px 30px;
+
+    &:hover {
+        box-shadow: 0px 0px 5px 1px rgb(0 0 0 / 50%);
+        filter: brightness(1.1)
+    }
 
     & a {
         font-size: 1.1em;

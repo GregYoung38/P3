@@ -11,25 +11,25 @@ section.reservation {
 
 section.fonctionnement, section.restaurants {
     padding: 50px 20px;
+
+    &>h2 {
+        margin-bottom: 30px;
+    }
 }
 
 /* Section : Restaurant */
 section.restaurants {
     background: #F8F8F8;
-
-    &>h2 {
-        padding: 4px 0;
-    }
 }
 
 button {
     position: relative;
-    padding: 20px 30px;
+    padding: 15px 20px;
     border-radius: 30px;
     border: none;
     background-image: linear-gradient(180deg, map-get($colors, second) 0%, map-get($colors, primary) 100%);
     box-shadow: 0px 0px 5px 1px rgb(0 0 0 / 20%);    
-    margin: 15px 0;    
+    margin: 20px 0;    
     transition: 0.5s;
     overflow: hidden;    
     cursor: pointer;
@@ -38,10 +38,10 @@ button {
         position: relative;             /* Permet de conserver le texte du bouton au premier plan */
         margin: 0;
         font-size: 1em;
-        letter-spacing: .06em;
+        letter-spacing: .05em;
         z-index: 100;
         color: #ffffff; 
-        text-shadow: 0 0 1px #ffffff;
+        // text-shadow: 0 0 1px #ffffff;
     }
 
     & span{
@@ -59,14 +59,15 @@ section {
     visibility: hidden; 
 
     &>h2 {
-        margin-bottom: 25px;
-        font-size: 1.2em;
+        font-size: 1.4em;
         font-weight: 900;
         text-shadow: 1px 0 0 black;
         letter-spacing: .05rem;
     }
 
     &>h3 {
+        margin-block-start: 11px;
+        margin-block-end: 11px;
         font-weight: normal;
         font-size: 1.2em;
     }
@@ -78,7 +79,7 @@ section {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 25px;
 }
 
 .fBlock {
@@ -122,9 +123,10 @@ section {
         }
 
         &:hover {
-            filter: brightness(1.05);
+            //filter: brightness(2.8);
+            background: rgba(224, 176, 255, .25);
             box-shadow: 1px 1px 10px rgb(160, 160, 160);
-            color: map-get($colors, primary);
+            // color: map-get($colors, primary);
 
             &>i {
                 color: map-get($colors, primary);
@@ -187,7 +189,7 @@ section {
     position: relative; 
     display: flex;
     justify-content: space-between;
-    padding: 20px 10px;
+    padding: 18px 10px;
     background: #fff;
     border-radius: 0 0 10px 10px;
     box-shadow: 0px 0px 8px #999;
@@ -195,7 +197,7 @@ section {
 
     &>.info {
         &>h2 { 
-            font-size: 1.2em; 
+            font-size: 1.1em; 
             color: #000; 
             font-weight: 900;
             text-shadow: 0 0 0.5px dimgrey;
@@ -224,7 +226,7 @@ section {
 .heart {    
     position: relative;
     align-self: center;
-    height: 30px;
+    height: 25px;
     width: 25px;
     margin-right: 10px;
     overflow: hidden; 

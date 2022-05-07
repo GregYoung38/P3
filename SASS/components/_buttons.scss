@@ -3,20 +3,19 @@ button.btn-pink:after {
 	content: '';
 	position: absolute;
 	left: -2px;
-	top: -2px;
-    // background: linear-gradient(45deg, #fb0094, #5e5ecf, #00ff00,#b9b932, #ff0000, #fb0094, #5e5ecf, #00ff00,#b9b932, #ff0000);
-    @include gradient_multicolor;
+	top: -2px;    
 	background-size: 400%;
 	width: calc(100% + 4px);
 	height: calc(100% + 4px);
 	z-index: -1;
     animation: colors-palette 30s linear infinite;    
+    @include gradient_multicolor;
 }
 button.btn-pink:after {
 	filter: blur(50px);
 }
 
-.search {
+header button.search {
     background: radial-gradient(ellipse at top, #fff, transparent), 
                 radial-gradient(ellipse at bottom, #4d9f0c, transparent);
     outline: none;
@@ -27,6 +26,8 @@ button.btn-pink:after {
     color: green;
     text-shadow: 0 0 1px green;
     font-size: 0.9em;
+    box-shadow: unset;
+    margin: 0;
 
     &:hover {
         background: radial-gradient(#e7e9ec, #d3a936);

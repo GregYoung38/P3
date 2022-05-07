@@ -140,7 +140,7 @@ footer {
 }
 footer div {
   width: 100%;
-  padding: 20px;
+  padding: 25px;
   background: rgb(60, 60, 60);
 }
 footer div > h2 {
@@ -148,6 +148,7 @@ footer div > h2 {
   font-size: 1.2em;
   color: #fff;
   margin: 15px 0;
+  margin-block-start: 5px;
 }
 footer ul {
   padding-inline-start: 0;
@@ -155,7 +156,7 @@ footer ul {
 }
 footer ul li a {
   font-weight: normal;
-  font-size: 1.1em;
+  font-size: 1em;
   line-height: 1.6em;
   color: #f1f1f1;
 }
@@ -268,23 +269,23 @@ section.reservation > h2 {
 section.fonctionnement, section.restaurants {
   padding: 50px 20px;
 }
+section.fonctionnement > h2, section.restaurants > h2 {
+  margin-bottom: 30px;
+}
 
 /* Section : Restaurant */
 section.restaurants {
   background: #F8F8F8;
 }
-section.restaurants > h2 {
-  padding: 4px 0;
-}
 
 button {
   position: relative;
-  padding: 20px 30px;
+  padding: 15px 20px;
   border-radius: 30px;
   border: none;
   background-image: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
-  margin: 15px 0;
+  margin: 20px 0;
   transition: 0.5s;
   overflow: hidden;
   cursor: pointer;
@@ -294,10 +295,9 @@ button > a {
   /* Permet de conserver le texte du bouton au premier plan */
   margin: 0;
   font-size: 1em;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   z-index: 100;
   color: #ffffff;
-  text-shadow: 0 0 1px #ffffff;
 }
 button span {
   position: absolute;
@@ -312,13 +312,14 @@ section {
   visibility: hidden;
 }
 section > h2 {
-  margin-bottom: 25px;
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: 900;
   text-shadow: 1px 0 0 black;
   letter-spacing: 0.05rem;
 }
 section > h3 {
+  margin-block-start: 11px;
+  margin-block-end: 11px;
   font-weight: normal;
   font-size: 1.2em;
 }
@@ -329,7 +330,7 @@ section > h3 {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 25px;
 }
 
 .fBlock {
@@ -371,9 +372,8 @@ section > h3 {
   font-weight: 100;
 }
 .fBlock > h3:hover {
-  filter: brightness(1.05);
+  background: rgba(224, 176, 255, 0.25);
   box-shadow: 1px 1px 10px rgb(160, 160, 160);
-  color: #9356DC;
 }
 .fBlock > h3:hover > i {
   color: #9356DC;
@@ -427,14 +427,14 @@ section > h3 {
   position: relative;
   display: flex;
   justify-content: space-between;
-  padding: 20px 10px;
+  padding: 18px 10px;
   background: #fff;
   border-radius: 0 0 10px 10px;
   box-shadow: 0px 0px 8px #999;
   overflow: hidden;
 }
 .informations > .info > h2 {
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: #000;
   font-weight: 900;
   text-shadow: 0 0 0.5px dimgrey;
@@ -459,7 +459,7 @@ section > h3 {
 .heart {
   position: relative;
   align-self: center;
-  height: 30px;
+  height: 25px;
   width: 25px;
   margin-right: 10px;
   overflow: hidden;
@@ -505,16 +505,16 @@ section > h3 {
 
 @media screen and (min-width: 360px) {
   .container .fBlock h3 {
-    font-size: 1.1em;
-    padding: 20px;
+    font-size: 1em;
+    padding: 25px;
   }
 
   .cards a.card > .wrapper {
-    height: 20vh;
+    height: 18vh;
   }
 
   button > a {
-    font-size: 1.1em;
+    font-size: 1.15em;
   }
 }
 @media screen and (min-width: 768px) {
@@ -544,14 +544,17 @@ section > h3 {
     font-size: 3em;
   }
 
-  main h2 {
-    text-align: center;
+  main section > h2 {
+    align-self: center;
   }
   main.restau > .container {
     justify-content: space-between;
   }
   main.restau > .container section {
     width: calc((100% - 30px) / 2);
+  }
+  main.restau > .container section > h2 {
+    align-self: center;
   }
   main.restau > button > a {
     font-size: 1.3em;
@@ -596,7 +599,7 @@ section > h3 {
     font-size: 1.3em;
   }
 
-  main.restau > .container section {
+  main.restau section {
     width: calc((100% - 40px) / 3);
   }
 }
@@ -629,7 +632,7 @@ header.restau h1 {
   width: 100%;
   font-family: "Shrikhand";
   font-size: 2em;
-  padding: 20px 0;
+  padding: 15px 0;
 }
 header.restau > .wrapper {
   position: relative;
@@ -692,14 +695,16 @@ main.restau section > h2 {
   font-weight: normal;
   text-shadow: none;
   letter-spacing: normal;
-  margin-block-end: 0;
+  margin-block-end: 10px;
   text-transform: uppercase;
+  align-self: flex-start;
 }
 main.restau section span {
-  width: 25px;
+  position: absolute;
+  width: 40px;
   background: #99E2D0;
-  height: 5px;
-  margin-top: -5px;
+  height: 3px;
+  margin-top: 22px;
 }
 main.restau section > article.meals {
   display: flex;
@@ -917,6 +922,10 @@ button.btn-command {
   width: 200px;
   padding: 20px 30px;
 }
+button.btn-command:hover {
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+  filter: brightness(1.1);
+}
 button.btn-command a {
   font-size: 1.1em;
 }
@@ -927,19 +936,19 @@ button.btn-pink:after {
   position: absolute;
   left: -2px;
   top: -2px;
-  background: linear-gradient(45deg, #fb0094, #5e5ecf, #00ff00, #b9b932, #ff0000, #fb0094, #5e5ecf, #00ff00, #b9b932, #ff0000);
   background-size: 400%;
   width: calc(100% + 4px);
   height: calc(100% + 4px);
   z-index: -1;
   animation: colors-palette 30s linear infinite;
+  background: linear-gradient(45deg, #fb0094, #5e5ecf, #00ff00, #b9b932, #ff0000, #fb0094, #5e5ecf, #00ff00, #b9b932, #ff0000);
 }
 
 button.btn-pink:after {
   filter: blur(50px);
 }
 
-.search {
+header button.search {
   background: radial-gradient(ellipse at top, #fff, transparent), radial-gradient(ellipse at bottom, #4d9f0c, transparent);
   outline: none;
   border: 1px solid #ccc;
@@ -949,8 +958,10 @@ button.btn-pink:after {
   color: green;
   text-shadow: 0 0 1px green;
   font-size: 0.9em;
+  box-shadow: unset;
+  margin: 0;
 }
-.search:hover {
+header button.search:hover {
   background: radial-gradient(#e7e9ec, #d3a936);
   color: #000;
   text-shadow: 0 0 1px #000;

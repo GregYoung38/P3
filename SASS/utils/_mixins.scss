@@ -1,14 +1,14 @@
 @mixin mobile-only {
     @media screen and (min-width: map-get($breakpoints, mobile)) {
         .container .fBlock h3 {
-            font-size: 1.1em;
-            padding: 20px;
+            font-size: 1em;
+            padding: 25px;
         }
         .cards a.card > .wrapper {
-            height: 20vh;
+            height: 18vh;
         }
         button > a {
-            font-size: 1.1em;
+            font-size: 1.15em;
         }
     }
 }
@@ -17,11 +17,9 @@
     @media screen and (min-width: map-get($breakpoints, tablet)) {
         .container {
             flex-direction: column;
-            // justify-content: center;
             align-content: center;
     
             & .fBlock {
-                // width: calc((100% - 10px)/2);
                 width: 300px;
             }
         }
@@ -51,8 +49,8 @@
         }
 
         main {
-            & h2 {
-                text-align: center
+            & section>h2 {
+                align-self: center;
             }
 
             &.restau {
@@ -61,6 +59,10 @@
         
                     & section {
                         width: calc((100% - 30px)/2);
+
+                        &>h2 {
+                            align-self: center;
+                        }
                     }
                 }
                 &>button > a {
@@ -122,7 +124,7 @@
             font-size: 1.3em;
         }
 
-        main.restau > .container section {
+        main.restau section {
             width: calc((100% - 40px)/3);
         }
     }
