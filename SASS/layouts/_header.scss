@@ -20,42 +20,49 @@ header {
         padding: 15px 0;
         background-color: #E8E8E8;
 
-        &>button {
-            display: none;
-            cursor: pointer;
-        }
+        & label {
+            display: flex;
+            justify-content: center;
 
-        &>i {
-            font-size: 1.2em;
-            align-self: center;
-        }
-
-        & input{
-            align-self: center;
-            font-weight: 700;
-            font-size: 1em;
-            margin-left: 10px;
-            outline: 0;
-            border: none;
-            background: transparent;
-            transition: .3s;
-            width: 120px;
-
-            &:hover {
+            & i {
+                font-size: 1.2em;
+                align-self: center;
+            }
+    
+            & input {
+                align-self: center;
+                font-weight: 700;
+                font-size: 1em;
+                margin-left: 10px;
+                outline: 0;
+                border: none;
+                background: transparent;
+                transition: .3s;
+                width: 110px;
+    
+                &:hover {
+                    cursor: pointer;
+                }
+    
+                &:focus {
+                    @at-root label.recherche { width: 100% }
+    
+                    padding: 5px 8px;
+                    background: #ffffff;
+                    border:1px solid #ccc;
+                    border-radius: 10px 0 0 10px;
+                    width: 50%;
+    
+                    ~.search {      /* Permet de réaliser une action sur élément frère.. ici le bouton */
+                        display: block;
+                    }                     
+                }  
+            }
+    
+            & button {
+                display: none;
                 cursor: pointer;
             }
-
-            &:focus {
-                padding: 5px 8px;
-                background: #ffffff;
-                border:1px solid #ccc;
-                border-radius: 10px 0 0 10px;
-                width: 50%;     
-                
-                ~.search {      /* Permet de réaliser une action sur élément frère.. ici le bouton */
-                    display: block;
-                }                        
-            }  
-        }
+        }        
     }
 }

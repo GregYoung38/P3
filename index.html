@@ -19,10 +19,12 @@
         <header>   
             <h1>ohmyfood</h1>
 
-            <div class="location">
-                <i class="fa-solid fa-location-dot"></i>                
-                <input type='text' value="Paris, Belleville" />
-                <button class="search">Chercher</button>
+            <div class="location">                
+                <label class="recherche" for="city">
+                    <i class="fa-solid fa-location-dot"></i> 
+                    <input id="city" type='text' value="Paris, Belleville" />        
+                    <button class="search">Chercher</button>   
+                </label>                        
             </div>
         </header>
 
@@ -32,9 +34,7 @@
             <section class="reservation">
                 <h2>Réservez le menu qui vous convient</h2>
                 <h3>Découvrez des restaurants d'exception, sélectionnés par nos soins</h3>
-                <!-- <button class="btn-pink">    -->
-                    <a class="btn-pink" href="#les_restos">Explorer nos restaurants</a>
-                <!-- </button> -->
+                <a class="btn-pink" href="#les_restos">Explorer nos restaurants</a>
             </section>
 
             <section class="fonctionnement">    
@@ -42,27 +42,27 @@
 
                 <div class="container">
                     <div class="fBlock">
-                        <h3>
+                        <div class="fButton">
                             <a class="number">1</a>
                             <i class="fa-solid fa-mobile-screen-button"></i>
                             Choisissez un restaurant
-                        </h3>
+                        </div>  
                     </div>  
 
                     <div class="fBlock">                    
-                        <h3>
+                        <div class="fButton">
                             <a class="number">2</a>
                             <i class="fa-regular fa-list-ul"></i>
                             Composez votre menu
-                        </h3>
+                        </div>  
                     </div>  
 
                     <div class="fBlock">
-                        <h3>
+                        <div class="fButton">
                             <a class="number">3</a>
                             <i class="fa-regular fa-store"></i>
                             Dégustez au restaurant
-                        </h3>
+                        </div>  
                     </div>  
                 </div>
             </section>
