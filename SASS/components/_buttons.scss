@@ -92,26 +92,3 @@ a.btn-pink {
         // animation-iteration-count: infinite
     }
 }
-
-.effet-gold:hover {
-    position: relative;
-    background: linear-gradient(to bottom, #cfc09f 22%,#634f2c 24%, #cfc09f 26%, #cfc09f 27%,#ffecb3 40%,#3a2c0f 78%); 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: #fff;
-    cursor: pointer;
-    /* Utilisation : <h1 class="effet-gold" data-heading="ohmyfood">ohmyfood</h1> */
-
-    &:after {
-        content: attr(data-heading);
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: -1;
-        position: absolute;
-        text-shadow: -1px 0 1px #ccc, 
-                     0 0px 1px #ccc, 
-                     0px 6px 10px rgb(0 0 0 / 80%), 
-                     5px 5px 5px rgb(250 0 0 / 40%);        
-    }
-}

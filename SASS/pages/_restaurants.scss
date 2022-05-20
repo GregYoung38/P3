@@ -181,17 +181,17 @@ main.restau {
         
         $t: 0;
         $delai: .2;
-        @for $n from 1 through 4 {                           /* Pour chaque <section> */
+        @for $n from 1 through 3 {                           /* Pour chaque <section> */
             &:nth-child(#{$n}) {                
 
-                @for $i from 1 through 5 {                      /* Pour chaque <article> */
+                @for $i from 2 through 5 {                      /* Pour chaque <article> */
                     & article.meals:nth-child(#{$i}) {
                         $t : $t + $delai;                          /* Réglage du moment d'exécution */
                         animation: opacity .3s linear #{$t}s;   
                         animation-fill-mode: forwards;
 
                         /* Contrôle dans le terminal */
-                        @debug #{section} $n #{'/ élément n°'} $i #{'=> Exécution à'} $t #{'sec'};
+                        // @debug #{section} $n #{'/ élément n°'} $i #{'=> Exécution à'} $t #{'sec'};
                     }
                 }
 
