@@ -86,9 +86,6 @@ a.btn-pink {
 
     &:hover {    
         border-radius: 0;  
-        // animation-name: shake-slow;
-        // animation-duration: 4s;
-        // animation-timing-function: ease-in-out;
-        // animation-iteration-count: infinite
+        filter: brightness(1.2);
     }
 }
